@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'homepage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _MyAppState();
@@ -21,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         // primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
