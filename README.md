@@ -1,2 +1,7 @@
 # Scouting-App
-Team #6647's official app for team and robot scouting
+Team #6647's official app for team and robot scouting during competitions
+
+## Authors
+
+* **Juan Pablo Gutiérrez** - [AndromedaHelix](https://github.com/AndromedaHelix)
+
