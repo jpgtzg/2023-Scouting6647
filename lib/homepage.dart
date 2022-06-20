@@ -12,20 +12,20 @@ class HomePage extends StatelessWidget {
         children: [
           const BottomBarInterface(),   
           const TopBar(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(bottom: 30.0),
-                child: Center(
-                  child: Image(
-                      image: AssetImage('assets/images/add.png'),
-                      height: 80,
-                      width: 80),
-                ),
-              ),
-            ],
-          ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: const [
+          //     Padding(
+          //       padding: EdgeInsets.only(bottom: 30.0),
+          //       child: Center(
+          //         child: Image(
+          //             image: AssetImage('assets/images/add.png'),
+          //             height: 80,
+          //             width: 80),
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
