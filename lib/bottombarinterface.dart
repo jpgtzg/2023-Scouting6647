@@ -11,7 +11,7 @@ class BottomBarInterface extends StatefulWidget {
 class _BottomBarInterfaceState extends State<BottomBarInterface> {
 //
   int _currentIndex = 0;
-  late PageController _pageController = new PageController();
+  late PageController _pageController = PageController();
 
   @override
   void initState() {
