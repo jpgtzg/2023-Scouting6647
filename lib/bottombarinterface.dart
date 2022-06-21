@@ -38,7 +38,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               },
               children: <Widget>[
                 Container(
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
                 Container(
                   color: Colors.white,
