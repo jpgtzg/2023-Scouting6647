@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:scouting_app/app_pages/add_page.dart';
 
-import 'homepage.dart';
+import 'appmanager.dart';
 
 void main() => runApp(const MyApp());
 
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           // primarySwatch: Colors.blue,
           ),
-      home: const HomePage(),
+      home: const AppManager(),
     );
   }
 }

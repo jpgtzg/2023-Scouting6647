@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:scouting_app/app_pages/add_page.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -37,17 +38,12 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                 setState(() => _currentIndex = index);
               },
               children: <Widget>[
+                const AddPage(),
                 Container(
-                  color: Colors.white,
+                  color: Colors.red,
                 ),
                 Container(
-                  color: Colors.white,
-                ),
-                Container(
-                  color: Colors.white,
-                ),
-                Container(
-                  color: Colors.white,
+                  color: Colors.green,
                 ),
               ],
             ),
@@ -60,14 +56,15 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
             },
             items: <BottomNavyBarItem>[
               BottomNavyBarItem(
-                  title: const Text('Item One'), icon: const Icon(Icons.home)),
+                title: const Text('Home'),
+                icon: const Icon(Icons.home),
+              ),
               BottomNavyBarItem(
-                  title: const Text('Item Two'), icon: const Icon(Icons.apps)),
+                title: const Text('Robots'),
+                icon: const Icon(Icons.apps),
+              ),
               BottomNavyBarItem(
-                  title: const Text('Item Three'),
-                  icon: const Icon(Icons.chat_bubble)),
-              BottomNavyBarItem(
-                  title: const Text('Item Four'),
+                  title: const Text('Settings'),
                   icon: const Icon(Icons.settings)),
             ],
           ),
