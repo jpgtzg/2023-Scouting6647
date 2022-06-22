@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/app_pages/add_page.dart';
+import 'package:scouting_app/app_pages/add_page_match.dart';
 
 import 'appmanager.dart';
 

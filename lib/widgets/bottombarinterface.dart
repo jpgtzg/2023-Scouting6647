@@ -1,6 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:scouting_app/app_pages/add_page.dart';
+import 'package:scouting_app/app_pages/add_page_match.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                 setState(() => _currentIndex = index);
               },
               children: <Widget>[
-                const AddPage(),
+                const AddPageMatch(),
                 Container(
                   color: Colors.red,
                 ),
