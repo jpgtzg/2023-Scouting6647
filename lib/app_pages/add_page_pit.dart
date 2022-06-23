@@ -5,7 +5,7 @@ import 'package:scouting_app/system/feedback_form.dart';
 import '../widgets/topbar.dart';
 
 class AddPagePit extends StatefulWidget {
-  AddPagePit({Key? key}) : super(key: key);
+  const AddPagePit({Key? key}) : super(key: key);
 
   @override
   State<AddPagePit> createState() => _AddPagePitState();

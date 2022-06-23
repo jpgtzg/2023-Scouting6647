@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:scouting_app/app_pages/add_page_match.dart';
 import 'package:scouting_app/app_pages/add_page_pit.dart';
 
@@ -60,7 +59,7 @@ class _AddPageManagerState extends State<AddPageManager> {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AddPagePit()));
+                    builder: (context) => const AddPagePit()));
               },
               style: ButtonStyle(
                 backgroundColor:
