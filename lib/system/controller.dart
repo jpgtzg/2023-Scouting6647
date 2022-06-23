@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-import 'package:scouting_app/models/feedback_form.dart';
+import 'package:scouting_app/system/feedback_form.dart';
 
 class FormController {
   final void Function(String) callback;

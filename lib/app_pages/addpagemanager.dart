@@ -60,7 +60,7 @@ class _AddPageManagerState extends State<AddPageManager> {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const AddPagePit()));
+                    builder: (context) => AddPagePit()));
               },
               style: ButtonStyle(
                 backgroundColor:
