@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:scouting_app/app_pages/add_page_match.dart';
+import 'package:scouting_app/app_pages/addpagemanager.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -12,19 +13,7 @@ class BottomBarInterface extends StatefulWidget {
 class _BottomBarInterfaceState extends State<BottomBarInterface> {
 //
   int _currentIndex = 0;
-  late PageController _pageController = PageController();
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+  late final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +27,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                 setState(() => _currentIndex = index);
               },
               children: <Widget>[
-                const AddPageMatch(),
+                const AddPageManager(),
                 Container(
                   color: Colors.red,
                 ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:scouting_app/app_pages/addpagemanager.dart';
+import 'package:scouting_app/appmanager.dart';
 import 'package:scouting_app/models/formdivider.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
+import 'package:scouting_app/widgets/topbar.dart';
 
 class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);
@@ -18,8 +21,32 @@ class _AddPageMatchState extends State<AddPageMatch> {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(
-            height: 120.0,
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0, left: 10.0),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {Navigator.pop(context);},
+                  icon: const Image(
+                    height: 30,
+                    width: 30,
+                    image: AssetImage("assets/images/back.png"),
+                  ),
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                const Text(
+                  "Back",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const   TopBar(
+            topPadding: 0,
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -93,7 +120,9 @@ class _AddPageMatchState extends State<AddPageMatch> {
                       formText: "Yes/No",
                       padding: 50,
                     ),
-                    const FormDivider(dividerText: "Endgame"),
+                    const FormDivider(
+                      dividerText: "Endgame",
+                    ),
                     const TextForm(
                       text: "Rung climbed",
                       formText: "Enter answer",
@@ -147,7 +176,9 @@ class _AddPageMatchState extends State<AddPageMatch> {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            onPrimary: Colors.white, primary: Colors.indigo),
+                          onPrimary: Colors.white,
+                          primary: Colors.indigo,
+                        ),
                         child: const Text("Submit"),
                       ),
                     ),
