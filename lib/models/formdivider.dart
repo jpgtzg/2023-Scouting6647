@@ -12,21 +12,27 @@ class FormDivider extends StatelessWidget {
         const SizedBox(
           height: 50,
         ),
-        const Divider(
-          color: Colors.black,
+        const SizedBox(
+          width: 320,
+          child:  Divider(
+            color: Colors.black,
+          ),
         ),
         const SizedBox(
           height: 50,
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0, right: 180),
-          child: Text(
-            dividerText,
-            style: const TextStyle(
-              fontFamily: "Oxygen",
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 20,
+        Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10.0, left: 30),
+            child: Text(
+              dividerText,
+              style: const TextStyle(
+                fontFamily: "Oxygen",
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 20,
+              ),
             ),
           ),
         ),
