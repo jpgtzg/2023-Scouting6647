@@ -1,4 +1,4 @@
-import 'package:scouting_app/models/feedback_match.dart';
+import 'feedback_match.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 

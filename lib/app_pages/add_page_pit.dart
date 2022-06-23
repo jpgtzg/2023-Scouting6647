@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/widgets/controller.dart';
-import 'package:scouting_app/models/feedback_form.dart';
+import 'package:scouting_app/system/controller.dart';
+import 'package:scouting_app/system/feedback_form.dart';
 
-class AddPagePit extends StatelessWidget {
-  const AddPagePit({Key? key}) : super(key: key);
+import '../widgets/topbar.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class AddPagePit extends StatefulWidget {
+  AddPagePit({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AddPagePit> createState() => _AddPagePitState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AddPagePitState extends State<AddPagePit> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -62,7 +49,8 @@ class _HomePageState extends State<HomePage> {
       content: Text(message),
     );
 
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Lmao")));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text("Datos enviados")));
 
     //_scaffoldKey.currentState.showSnackBar(snackbar);
   }
@@ -72,61 +60,92 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _scaffoldKey,
       body: Form(
-          key: _formKey,
-          child: Container(
-              padding: EdgeInsets.symmetric(vertical: 100, horizontal: 24),
-              child: Column(children: <Widget>[
-                TextFormField(
-                  controller: nameteamController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Enter Valid Name";
-                    } else {
-                      return null;
-                    }
-                  },
-                  decoration: InputDecoration(hintText: "Nombre del equipo"),
-                ),
-                TextFormField(
-                  controller: numteamController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Enter Valid Name";
-                    } else {
-                      return null;
-                    }
-                  },
-                  decoration: InputDecoration(hintText: "Numero de equipo"),
-                ),
-                TextFormField(
-                  controller: chasisController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Enter Valid Name";
-                    } else {
-                      return null;
-                    }
-                  },
-                  decoration: InputDecoration(hintText: "Tipo de chasis"),
-                ),
-                TextFormField(
-                  controller: wheelController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Enter Valid Name";
-                    } else {
-                      return null;
-                    }
-                  },
-                  decoration: InputDecoration(hintText: "Tipo de llantas"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    _submitForm();
-                  },
-                  child: Text("Guardar"),
-                )
-              ]))),
+        key: _formKey,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Image(
+                      height: 30,
+                      width: 30,
+                      image: AssetImage("assets/images/back.png"),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Text(
+                    "Back",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const TopBar(
+              topPadding: 0,
+            ),
+            //LO DE ROB TODO: BORRAR
+            TextFormField(
+              controller: nameteamController,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Enter Valid Name";
+                } else {
+                  return null;
+                }
+              },
+              decoration: InputDecoration(hintText: "Nombre del equipo"),
+            ),
+            TextFormField(
+              controller: numteamController,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Enter Valid Name";
+                } else {
+                  return null;
+                }
+              },
+              decoration: InputDecoration(hintText: "Numero de equipo"),
+            ),
+            TextFormField(
+              controller: chasisController,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Enter Valid Name";
+                } else {
+                  return null;
+                }
+              },
+              decoration: InputDecoration(hintText: "Tipo de chasis"),
+            ),
+            TextFormField(
+              controller: wheelController,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Enter Valid Name";
+                } else {
+                  return null;
+                }
+              },
+              decoration: InputDecoration(hintText: "Tipo de llantas"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _submitForm();
+              },
+              child: Text("Guardar"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
