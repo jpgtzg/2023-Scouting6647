@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:scouting_app/models/formdivider.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
+import 'package:scouting_app/widgets/controller_match.dart';
+import 'package:scouting_app/models/feedback_match.dart';
 
 class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);
@@ -11,11 +13,80 @@ class AddPageMatch extends StatefulWidget {
 }
 
 class _AddPageMatchState extends State<AddPageMatch> {
-  void submit() {}
+  final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  //TextField Controllers
+  TextEditingController numteamController = TextEditingController();
+  TextEditingController nameteamController = TextEditingController();
+  TextEditingController matchnumController = TextEditingController();
+  TextEditingController matchtypeController = TextEditingController();
+  TextEditingController allianceController = TextEditingController();
+  TextEditingController tarmacautoController = TextEditingController();
+  TextEditingController lowerautoController = TextEditingController();
+  TextEditingController upperautoController = TextEditingController();
+  TextEditingController lowerteleopController = TextEditingController();
+  TextEditingController upperteleopController = TextEditingController();
+  TextEditingController defendedController = TextEditingController();
+  TextEditingController gotdefendedController = TextEditingController();
+  TextEditingController rungController = TextEditingController();
+  TextEditingController foulsController = TextEditingController();
+  TextEditingController techfoulsController = TextEditingController();
+  TextEditingController alliancescoreController = TextEditingController();
+  TextEditingController rpController = TextEditingController();
+  TextEditingController wonController = TextEditingController();
+  TextEditingController commentController = TextEditingController();
+
+  void submitForm() {
+    if (_formKey.currentState!.validate()) {
+      FeedbackMatch feedbackMatch = FeedbackMatch(
+        numteamController.text,
+        nameteamController.text,
+        matchnumController.text,
+        matchtypeController.text,
+        allianceController.text,
+        tarmacautoController.text,
+        lowerautoController.text,
+        upperautoController.text,
+        lowerteleopController.text,
+        upperteleopController.text,
+        defendedController.text,
+        gotdefendedController.text,
+        rungController.text,
+        foulsController.text,
+        techfoulsController.text,
+        alliancescoreController.text,
+        rpController.text,
+        wonController.text,
+        commentController.text,
+      );
+
+      FormMatch formMatch = FormMatch((String response) {
+        print(response);
+        if (response == FormMatch.STATUS_SUCCESS) {
+          _showSnackBar("Se han enviado los datos");
+        } else {
+          _showSnackBar("Un error ha ocurrido, vuelve a intentarlo");
+        }
+      });
+
+      _showSnackBar("Enviando informacion");
+      formMatch.submitForm(feedbackMatch);
+    }
+  }
+
+  _showSnackBar(String message) {
+    final snackbar = SnackBar(
+      content: Text(message),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Lmao")));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       body: Column(
         children: [
           const SizedBox(
