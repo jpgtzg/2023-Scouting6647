@@ -3,120 +3,157 @@ import 'package:scouting_app/models/formdivider.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
 
-class AddPageMatch extends StatelessWidget {
+class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);
 
-  Color hexToColor(String code) {
-    return Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
-  }
+  @override
+  State<AddPageMatch> createState() => _AddPageMatchState();
+}
+
+class _AddPageMatchState extends State<AddPageMatch> {
+  void submit() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        // AGREGA PADDING
         children: [
           const SizedBox(
             height: 120.0,
-            // color: Colors.white,
           ),
           Expanded(
             child: SingleChildScrollView(
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    NumberForm(
+                  children: [
+                    const NumberForm(
                       text: "Team number",
                       formText: "Enter team number",
+                      padding: 0,
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Team name",
                       formText: "Enter team name",
+                      padding: 50,
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Match number",
                       formText: "Enter match number",
+                      padding: 50,
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Match type",
                       formText: "Enter match type",
+                      padding: 50,
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Alliance",
                       formText: "Enter alliance",
+                      padding: 50,
                     ),
-                    FormDivider(
+                    const FormDivider(
                       dividerText: "Autonomous",
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Left tarmac?",
                       formText: "Yes/No",
+                      padding: 30,
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Lower Hub Cargo",
                       formText: "Enter cargo number",
+                      padding: 50,
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Upper Hub Cargo",
                       formText: "Enter cargo number",
+                      padding: 50,
                     ),
-                    FormDivider(
+                    const FormDivider(
                       dividerText: "Teleop",
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Lower Hub Cargo",
                       formText: "Enter cargo number",
+                      padding: 30,
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Upper Hub Cargo",
                       formText: "Enter cargo number",
+                      padding: 50,
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Robot defended?",
                       formText: "Yes/No",
+                      padding: 50,
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "Was the robot defended?",
                       formText: "Yes/No",
+                      padding: 50,
                     ),
-                    FormDivider(dividerText: "Endgame"),
-                    TextForm(
+                    const FormDivider(dividerText: "Endgame"),
+                    const TextForm(
                       text: "Rung climbed",
                       formText: "Enter answer",
+                      padding: 30,
                     ),
-                    FormDivider(
+                    const FormDivider(
                       dividerText: "Fouls",
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Fouls made",
                       formText: "Enter number",
+                      padding: 30,
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Tech fouls made",
                       formText: "Enter number",
+                      padding: 50,
                     ),
-                    FormDivider(
+                    const FormDivider(
                       dividerText: "Match results",
                     ),
-                    NumberForm(
+                    const NumberForm(
                       text: "Alliance score",
                       formText: "Enter score",
+                      padding: 30,
                     ),
-                    NumberForm(
-                        text: "Ranking points",
-                        formText: "Enter ranking points"),
-                    TextForm(
+                    const NumberForm(
+                      text: "Ranking points",
+                      formText: "Enter ranking points",
+                      padding: 50,
+                    ),
+                    const TextForm(
                       text: "Alliance won?",
                       formText: "Yes/No",
+                      padding: 50,
                     ),
-                    FormDivider(
+                    const FormDivider(
                       dividerText: "Extra comments",
                     ),
-                    TextForm(
+                    const TextForm(
                       text: "",
                       formText: "Enter comments",
+                      padding: 0,
                     ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 150,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            onPrimary: Colors.white, primary: Colors.indigo),
+                        child: const Text("Submit"),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    )
                   ],
                 ),
               ),
