@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TextForm extends StatelessWidget {
-
-  const TextForm({Key? key, required this.text, required this.formText, required this.padding}) : super(key: key);
+  const TextForm(
+      {Key? key,
+      required this.formText,
+      required this.padding,
+      required TextFormField child,
+      required this.text})
+      : super(key: key);
 
   final String formText;
   final String text;
@@ -15,7 +20,7 @@ class TextForm extends StatelessWidget {
           height: padding,
         ),
         Align(
-          alignment:  Alignment.topLeft,
+          alignment: Alignment.topLeft,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 10.0, left: 30),
             child: Text(
@@ -30,7 +35,7 @@ class TextForm extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 10.0, right: 30, left : 30),
+          padding: const EdgeInsets.only(bottom: 10.0, right: 30, left: 30),
           child: TextFormField(
             decoration: InputDecoration(
               labelText: formText,
@@ -39,7 +44,7 @@ class TextForm extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25.0),
                 borderSide: const BorderSide(),
               ),
-              
+
               //fillColor: Colors.green
             ),
             style: const TextStyle(
