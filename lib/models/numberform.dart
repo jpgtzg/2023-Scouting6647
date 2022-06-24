@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class NumberForm extends StatelessWidget {
-  const NumberForm({
-    Key? key,
-    required this.text,
-    required this.formText,
-    required this.padding,
-    child,
-  }) : super(key: key);
+  const NumberForm(
+      {Key? key,
+      required this.text,
+      required this.formText,
+      required this.padding,
+      required this.controller})
+      : super(key: key);
 
   final String formText;
   final String text;
   final double padding;
-
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,6 +38,14 @@ class NumberForm extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 10.0, right: 30, left: 30),
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Enter Valid Name";
+              } else {
+                return null;
+              }
+            },
+            controller: controller,
             decoration: InputDecoration(
               labelText: formText,
               fillColor: Colors.white,
