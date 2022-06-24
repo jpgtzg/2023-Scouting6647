@@ -127,6 +127,15 @@ class _AddPageMatchState extends State<AddPageMatch> {
                       text: "Team number",
                       formText: "Enter team number",
                       padding: 0,
+                          child: TextFormField(
+                            controller: numteamController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Enter Valid Number";
+                              } else {
+                                return null;
+                              }
+                            },
                     ),
                     const TextForm(
                       text: "Team name",
