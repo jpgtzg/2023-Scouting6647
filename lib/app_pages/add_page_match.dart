@@ -38,7 +38,7 @@ class _AddPageMatchState extends State<AddPageMatch> {
   TextEditingController wonController = TextEditingController();
   TextEditingController commentController = TextEditingController();
 
-  void submitForm() {
+  void _submitForm() {
     if (_formKey.currentState!.validate()) {
       FeedbackMatch feedbackMatch = FeedbackMatch(
         numteamController.text,
@@ -87,179 +87,1016 @@ class _AddPageMatchState extends State<AddPageMatch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key : _scaffoldKey,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {Navigator.pop(context);},
-                  icon: const Image(
-                    height: 30,
-                    width: 30,
-                    image: AssetImage("assets/images/back.png"),
-                  ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                const Text(
-                  "Back",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const   TopBar(
-            topPadding: 0,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const NumberForm(
-                      text: "Team number",
-                      formText: "Enter team number",
-                      padding: 0,
-                    ),
-                    const TextForm(
-                      text: "Team name",
-                      formText: "Enter team name",
-                      padding: 50,
-                    ),
-                    const NumberForm(
-                      text: "Match number",
-                      formText: "Enter match number",
-                      padding: 50,
-                    ),
-                    const TextForm(
-                      text: "Match type",
-                      formText: "Enter match type",
-                      padding: 50,
-                    ),
-                    const TextForm(
-                      text: "Alliance",
-                      formText: "Enter alliance",
-                      padding: 50,
-                    ),
-                    const FormDivider(
-                      dividerText: "Autonomous",
-                    ),
-                    const TextForm(
-                      text: "Left tarmac?",
-                      formText: "Yes/No",
-                      padding: 30,
-                    ),
-                    const NumberForm(
-                      text: "Lower Hub Cargo",
-                      formText: "Enter cargo number",
-                      padding: 50,
-                    ),
-                    const NumberForm(
-                      text: "Upper Hub Cargo",
-                      formText: "Enter cargo number",
-                      padding: 50,
-                    ),
-                    const FormDivider(
-                      dividerText: "Teleop",
-                    ),
-                    const NumberForm(
-                      text: "Lower Hub Cargo",
-                      formText: "Enter cargo number",
-                      padding: 30,
-                    ),
-                    const NumberForm(
-                      text: "Upper Hub Cargo",
-                      formText: "Enter cargo number",
-                      padding: 50,
-                    ),
-                    const TextForm(
-                      text: "Robot defended?",
-                      formText: "Yes/No",
-                      padding: 50,
-                    ),
-                    const TextForm(
-                      text: "Was the robot defended?",
-                      formText: "Yes/No",
-                      padding: 50,
-                    ),
-                    const FormDivider(
-                      dividerText: "Endgame",
-                    ),
-                    const TextForm(
-                      text: "Rung climbed",
-                      formText: "Enter answer",
-                      padding: 30,
-                    ),
-                    const FormDivider(
-                      dividerText: "Fouls",
-                    ),
-                    const NumberForm(
-                      text: "Fouls made",
-                      formText: "Enter number",
-                      padding: 30,
-                    ),
-                    const NumberForm(
-                      text: "Tech fouls made",
-                      formText: "Enter number",
-                      padding: 50,
-                    ),
-                    const FormDivider(
-                      dividerText: "Match results",
-                    ),
-                    const NumberForm(
-                      text: "Alliance score",
-                      formText: "Enter score",
-                      padding: 30,
-                    ),
-                    const NumberForm(
-                      text: "Ranking points",
-                      formText: "Enter ranking points",
-                      padding: 50,
-                    ),
-                    const TextForm(
-                      text: "Alliance won?",
-                      formText: "Yes/No",
-                      padding: 50,
-                    ),
-                    const FormDivider(
-                      dividerText: "Extra comments",
-                    ),
-                    const TextForm(
-                      text: "",
-                      formText: "Enter comments",
-                      padding: 0,
-                    ),
-                    const SizedBox(
+      key: _scaffoldKey,
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Image(
                       height: 30,
+                      width: 30,
+                      image: AssetImage("assets/images/back.png"),
                     ),
-                    SizedBox(
-                      width: 150,
-                      height: 40,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          onPrimary: Colors.white,
-                          primary: Colors.indigo,
-                        ),
-                        child: const Text("Submit"),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Text(
+                    "Back",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const TopBar(
+              topPadding: 0,
+            ),
+            //LO DE ROB TODO: BORRAR
+            Expanded(
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 0,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    )
-                  ],
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Team Number",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: numteamController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter team number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+                      // TextFormField(
+                      //   controller: nameteamController,
+                      //   validator: (value) {
+                      //     if (value!.isEmpty) {
+                      //       return "Enter Valid Name";
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   decoration: InputDecoration(hintText: "Nombre del equipo"),
+                      // ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Team Name",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: nameteamController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter team name",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          keyboardType: TextInputType.number,
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+                      // TextFormField(
+                      //   controller: numteamController,
+                      //   validator: (value) {
+                      //     if (value!.isEmpty) {
+                      //       return "Enter Valid Name";
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   decoration: InputDecoration(hintText: "Numero de equipo"),
+                      // ),
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Match Number",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: matchnumController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter match num",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+                      // TextFormField(
+                      //   controller: chasisController,
+                      //   validator: (value) {
+                      //     if (value!.isEmpty) {
+                      //       return "Enter Valid Name";
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   decoration: InputDecoration(hintText: "Tipo de chasis"),
+                      // ),
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Game type",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: matchtypeController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter match type",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+                      // TextFormField(
+                      //   controller: wheelController,
+                      //   validator: (value) {
+                      //     if (value!.isEmpty) {
+                      //       return "Enter Valid Name";
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   decoration: InputDecoration(hintText: "Tipo de llantas"),
+                      // ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Alliance",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: allianceController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter alliance color",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+//Inicia TarmacAuto
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Robot move out from the Tarmac? (Yes/No)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: tarmacautoController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid answer",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin TarmacAuto
+
+//Inicia LowerAuto
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Lower Hub (Autonomus)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: lowerautoController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid score",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+// Fin LowerAuto
+
+// Inicia UpperAuto
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Upper Hub (Autonomus)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: upperautoController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Termina UpperAuto
+
+//Inicia LowerTeleop
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Lower Hub (Teleop)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: lowerteleopController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin LowerTeleop
+
+//Inicia UpperTeleop
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Upper Hub (Teleop)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: upperteleopController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter match type",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin UpperTeleop
+
+//Inicia Defended
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Did robot defend?",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: defendedController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid text",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+// Fin Defended
+
+//Inicia GotDefended
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Robot got defended?",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: gotdefendedController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid text",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin GotDefended
+
+//Inicia rung
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Robot climbed? (Lower, Mid, Upper, Traversal Rung)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: rungController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid rung",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin Rung
+
+//Inicia Fouls
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Fouls",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: foulsController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin Fouls
+
+//Inicia TechFouls
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Tech Fouls",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: techfoulsController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin TechFouls
+
+//Inicia alliancescore
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Alliance Score",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: alliancescoreController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin alliancescore
+
+//Inicia RP
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Ranking Points Earned",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: rpController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid number",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin RP
+
+//Iniciar Won
+
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Alliance won? (Yes/No)",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: wonController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter valid text",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+//Fin won
+
+//Iniciar comments
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0, left: 30),
+                          child: Text(
+                            "Comments:",
+                            style: TextStyle(
+                              fontFamily: "Oxygen",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 10.0, right: 30, left: 30),
+                        child: TextFormField(
+                          controller: commentController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Enter valid answer";
+                            } else {
+                              return null;
+                            }
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Enter match type",
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(),
+                            ),
+
+                            //fillColor: Colors.green
+                          ),
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                          ),
+                        ),
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          _submitForm();
+                        },
+                        child: Text("Save"),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
