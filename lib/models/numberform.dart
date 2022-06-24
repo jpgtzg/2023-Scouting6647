@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 class NumberForm extends StatelessWidget {
-  const NumberForm({Key? key, required this.text, required this.formText, required this.padding}) : super(key: key);
+  const NumberForm({
+    Key? key,
+    required this.text,
+    required this.formText,
+    required this.padding,
+    child,
+  }) : super(key: key);
 
   final String formText;
   final String text;
   final double padding;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +27,6 @@ class NumberForm extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-              
                 fontFamily: "Oxygen",
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -36,7 +42,7 @@ class NumberForm extends StatelessWidget {
               labelText: formText,
               fillColor: Colors.white,
               border: OutlineInputBorder(
-                borderRadius:  BorderRadius.circular(25.0),
+                borderRadius: BorderRadius.circular(25.0),
                 borderSide: const BorderSide(),
               ),
               //fillColor: Colors.green
