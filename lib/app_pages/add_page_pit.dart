@@ -100,31 +100,47 @@ class _AddPagePitState extends State<AddPagePit> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextForm(text: "Team name", formText: "Enter team name", padding: 0, controller: nameteamController),
-
-                      NumberForm(text: "Team number", formText: "Enter team number", padding: 50, controller: numteamController),
-
-                      TextForm(text: "Chassis type", formText: "Enter chassis type", padding: 50, controller: chasisController),
-
-                      TextForm(text: "Wheel type", formText: "Enter wheel type", padding: 50, controller: wheelController),
-
-                      SizedBox(
-                      width: 150,
-                      height: 40,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _submitForm();
-                        },
-                        style: ElevatedButton.styleFrom(
-                          onPrimary: Colors.white,
-                          primary: Colors.indigo,
-                        ),
-                        child: const Text("Submit"),
+                      TextForm(
+                        text: "Team name",
+                        formText: "Enter team name",
+                        padding: 0,
+                        controller: nameteamController,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    )
+                      NumberForm(
+                        text: "Team number",
+                        formText: "Enter team number",
+                        padding: 50,
+                        controller: numteamController,
+                      ),
+                      TextForm(
+                        text: "Chassis type",
+                        formText: "Enter chassis type",
+                        padding: 50,
+                        controller: chasisController,
+                      ),
+                      TextForm(
+                        text: "Wheel type",
+                        formText: "Enter wheel type",
+                        padding: 50,
+                        controller: wheelController,
+                      ),
+                      SizedBox(
+                        width: 150,
+                        height: 40,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            _submitForm();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            onPrimary: Colors.white,
+                            primary: Colors.indigo,
+                          ),
+                          child: const Text("Submit"),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      )
                     ],
                   ),
                 ),
