@@ -16,19 +16,13 @@ class _AddPageManagerState extends State<AddPageManager> {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 125.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
+          child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Column(
               children: [
-                Image(
-                    image: AssetImage(
-                        "assets/images/background/back1.jpeg")),
-                Image(
-                    image: AssetImage(
-                        "assets/images/background/back2.jpeg")),
-                Image(
-                    image: AssetImage(
-                        "assets/images/background/back1.jpeg"))
+                Image(image: AssetImage("assets/images/background/back2.jpeg")),
+                Image(image: AssetImage("assets/images/background/back3.jpeg")),
+                Image(image: AssetImage("assets/images/background/back1.jpeg")),
               ],
             ),
           ),
