@@ -43,12 +43,13 @@ flutter:
 
  
   assets: 
-<<<<<<< HEAD
     - assets/images/Logo.png
     - assets/images/add.png
     - assets/images/back.png
     - assets/images/background/back1.jpeg
     - assets/images/background/back2.jpeg
+    - assets/images/background/back3.jpeg
+    - assets/images/background/back4.jpeg
     - assets/images/
     - assets/icons/
 
