@@ -1,10 +1,10 @@
-class FeedbackForm {
+class FeedbackPit {
   String _nameteam;
   String _numteam;
   String _chasis;
   String _wheel;
 
-  FeedbackForm(
+  FeedbackPit(
     this._nameteam,
     this._numteam,
     this._chasis,

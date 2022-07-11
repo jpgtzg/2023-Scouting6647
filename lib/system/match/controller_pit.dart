@@ -1,8 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-import 'package:scouting_app/system/feedback_form.dart';
+import 'package:scouting_app/system/pit/feedback_pit.dart';
 
-class FormController {
+
+class PitController {
   final void Function(String) callback;
 
   static const String URL =
@@ -10,9 +11,9 @@ class FormController {
 
   static const STATUS_SUCCESS = "SUCCESS";
 
-  FormController(this.callback);
+  PitController(this.callback);
 
-  void submitForm(FeedbackForm feedbackForm) async {
+  void submitForm(FeedbackPit feedbackForm) async {
     try {
       final response = await http.get(Uri.parse(URL + feedbackForm.toParams()));
       await callback;

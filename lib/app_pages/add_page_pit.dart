@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
-import 'package:scouting_app/system/controller.dart';
-import 'package:scouting_app/system/feedback_form.dart';
+import 'package:scouting_app/system/match/controller_pit.dart';
+import 'package:scouting_app/system/pit/feedback_pit.dart';
 
 import '../widgets/topbar.dart';
 
@@ -25,16 +25,16 @@ class _AddPagePitState extends State<AddPagePit> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      FeedbackForm feedbackForm = FeedbackForm(
+      FeedbackPit feedbackForm = FeedbackPit(
         nameteamController.text,
         numteamController.text,
         chasisController.text,
         wheelController.text,
       );
 
-      FormController formController = FormController((String response) {
+      PitController formController = PitController((String response) {
         print(response);
-        if (response == FormController.STATUS_SUCCESS) {
+        if (response == PitController.STATUS_SUCCESS) {
           _showSnackBar("Data has been sent");
         } else {
           _showSnackBar("An error has ocurred, try again later");
