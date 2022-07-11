@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:scouting_app/app_pages/add_page_match.dart';
 import 'package:scouting_app/app_pages/addpagemanager.dart';
+import 'package:scouting_app/robot_gallery/gallerymanager.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -28,9 +29,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               },
               children: <Widget>[
                 const AddPageManager(),
-                Container(
-                  color: Colors.red,
-                ),
+                RobotGallery(),
                 Container(
                   color: Colors.green,
                 ),
