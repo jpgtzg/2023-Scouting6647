@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
-import 'package:scouting_app/system/match/controller_pit.dart';
+import 'package:scouting_app/system/pit/controller_pit.dart';
 import 'package:scouting_app/system/pit/feedback_pit.dart';
 
 import '../widgets/topbar.dart';
