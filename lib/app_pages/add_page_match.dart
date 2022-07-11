@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scouting_app/models/formdivider.dart';
 import 'package:scouting_app/models/numberform.dart';
 import 'package:scouting_app/models/textform.dart';
-import 'package:scouting_app/system/pit/feedback_match.dart';
+import 'package:scouting_app/system/match/feedback_match.dart';
 import 'package:scouting_app/widgets/topbar.dart';
 import 'package:scouting_app/system/match/controller_match.dart';
 
