@@ -18,7 +18,7 @@ Team #6647's official app for team and robot scouting during competitions
   + [ ] Create RobotDetails() 
 * [ ] Create settings tab
 * [ ] Change colors for RobotList()
-
+* [ ] Verify size compatibility for different devices
 ## Authors
 
 * **Juan Pablo Gutiérrez** - [AndromedaHelix](https://github.com/AndromedaHelix)
