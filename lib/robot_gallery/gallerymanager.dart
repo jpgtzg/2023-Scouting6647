@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/fetch/robot_list.dart';
+import 'package:scouting_app/robot_gallery/robot_list.dart';
 
 class RobotGallery extends StatefulWidget {
   RobotGallery({Key? key}) : super(key: key);
