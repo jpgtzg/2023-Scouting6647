@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/models/numberform.dart';
-import 'package:scouting_app/models/textform.dart';
 import 'package:scouting_app/system/pit/controller_pit.dart';
 import 'package:scouting_app/system/pit/feedback_pit.dart';
 
 import '../widgets/topbar.dart';
+import '../widgets/numberform.dart';
+import '../widgets/formdivider.dart';
+import '../widgets/textform.dart';
 
 class AddPagePit extends StatefulWidget {
   const AddPagePit({Key? key}) : super(key: key);
@@ -100,17 +101,17 @@ class _AddPagePitState extends State<AddPagePit> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextForm(
-                        text: "Team name",
-                        formText: "Enter team name",
-                        padding: 0,
-                        controller: nameteamController,
-                      ),
                       NumberForm(
                         text: "Team number",
                         formText: "Enter team number",
-                        padding: 50,
+                        padding: 0,
                         controller: numteamController,
+                      ),
+                      TextForm(
+                        text: "Team name",
+                        formText: "Enter team name",
+                        padding: 50,
+                        controller: nameteamController,
                       ),
                       TextForm(
                         text: "Chassis type",

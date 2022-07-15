@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/models/formdivider.dart';
-import 'package:scouting_app/models/numberform.dart';
-import 'package:scouting_app/models/textform.dart';
 import 'package:scouting_app/system/match/feedback_match.dart';
 import 'package:scouting_app/widgets/topbar.dart';
 import 'package:scouting_app/system/match/controller_match.dart';
+
+import '../widgets/numberform.dart';
+import '../widgets/formdivider.dart';
+import '../widgets/textform.dart';
 
 class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);
@@ -62,9 +63,9 @@ class _AddPageMatchState extends State<AddPageMatch> {
         commentController.text,
       );
 
-      FormMatch formMatch = FormMatch((String response) {
+      MatchController formMatch = MatchController((String response) {
         print(response);
-        if (response == FormMatch.STATUS_SUCCESS) {
+        if (response == MatchController.STATUS_SUCCESS) {
           _showSnackBar("Data has been sent");
         } else {
           _showSnackBar("An error has ocurred, try again later");

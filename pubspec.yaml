@@ -21,6 +21,7 @@ dependencies:
   flutter_svg: ^1.1.0
   bottom_navy_bar: ^6.0.0
   http: ^0.13.4
+  sliding_up_panel: ^2.0.0+1
   
 
 dev_dependencies:

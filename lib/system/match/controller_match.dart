@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:scouting_app/system/match/feedback_match.dart';
 
-class FormMatch {
+class MatchController {
   final void Function(String) callback;
 
   static const String URL =
@@ -10,7 +10,7 @@ class FormMatch {
 
   static const STATUS_SUCCESS = "SUCCESS";
 
-  FormMatch(this.callback);
+  MatchController(this.callback);
 
   void submitForm(FeedbackMatch feedbackMatch) async {
     try {
