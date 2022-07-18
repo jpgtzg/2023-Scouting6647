@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:scouting_app/robot_gallery/robot_details.dart';
 import 'package:scouting_app/system/fetch/controller_gallery.dart';
@@ -62,7 +60,7 @@ class _RobotListState extends State<RobotList> {
                     shrinkWrap: false,
                     itemCount: feedbackItems.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return RobotCard(feedbackItems: feedbackItems, robotIndex : index);
+                      return RobotCard(feedbackItems: feedbackItems, robotIndex: index);
                     },
                   ),
                 ),
@@ -75,6 +73,7 @@ class _RobotListState extends State<RobotList> {
   }
 }
 
+// ignore: must_be_immutable
 class RobotCard extends StatelessWidget {
   List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
   final int robotIndex;
