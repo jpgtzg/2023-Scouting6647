@@ -119,7 +119,7 @@ class RobotCard extends StatelessWidget {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
-                    color: Colors.amber.withOpacity(0.8),
+                    color: Colors.deepPurpleAccent.withOpacity(0.8),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0, top: 10),
@@ -130,7 +130,7 @@ class RobotCard extends StatelessWidget {
                           textAlign: TextAlign.left,
                           style: const TextStyle(
                             fontFamily: "Poppins",
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 20,
                           ),
                         ),
