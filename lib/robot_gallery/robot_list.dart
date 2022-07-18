@@ -48,9 +48,6 @@ class _RobotListState extends State<RobotList> {
           ),
           Column(
             children: [
-              SizedBox(
-                height: 0,
-              ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -63,71 +60,7 @@ class _RobotListState extends State<RobotList> {
                     shrinkWrap: false,
                     itemCount: feedbackItems.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        children: [
-                          SizedBox(
-                            height: 15,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => RobotDetails(
-                                    "${feedbackItems[index].number}",
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              height: 320,
-                              width: 320,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    "${feedbackItems[index].image}",
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                                color: Colors.white.withOpacity(0.9),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30.0)),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(14),
-                                        topRight: Radius.circular(14),
-                                      ),
-                                      color: Colors.amber.withOpacity(0.8),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 20.0, top: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "${feedbackItems[index].number}\n${feedbackItems[index].name}",
-                                            textAlign: TextAlign.left,
-                                            style: const TextStyle(
-                                              fontFamily: "Poppins",
-                                              color: Colors.black,
-                                              fontSize: 20,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    alignment: Alignment.topLeft,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
+                      return RobotCard(feedbackItems: feedbackItems, robotIndex : index);
                     },
                   ),
                 ),
@@ -136,6 +69,80 @@ class _RobotListState extends State<RobotList> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RobotCard extends StatelessWidget {
+  List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
+  final int robotIndex;
+
+  RobotCard({Key? key, required this.feedbackItems, required this.robotIndex}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => RobotDetails(
+                  "${feedbackItems[robotIndex].number}",
+                ),
+              ),
+            );
+          },
+          child: Container(
+            height: 320,
+            width: 320,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  "${feedbackItems[robotIndex].image}",
+                ),
+                fit: BoxFit.cover,
+              ),
+              color: Colors.white.withOpacity(0.9),
+              borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                    color: Colors.amber.withOpacity(0.8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, top: 10),
+                    child: Column(
+                      children: [
+                        Text(
+                          "${feedbackItems[robotIndex].number}\n${feedbackItems[robotIndex].name}",
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                            fontFamily: "Poppins",
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  alignment: Alignment.topLeft,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
