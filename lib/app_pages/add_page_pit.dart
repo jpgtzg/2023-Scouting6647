@@ -125,9 +125,12 @@ class _AddPagePitState extends State<AddPagePit> {
                         padding: 50,
                         controller: wheelController,
                       ),
-                      SizedBox(
-                        width: 150,
-                        height: 40,
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        width: 160,
+                        height: 45,
                         child: ElevatedButton(
                           onPressed: () {
                             _submitForm();
@@ -135,13 +138,15 @@ class _AddPagePitState extends State<AddPagePit> {
                           style: ElevatedButton.styleFrom(
                             onPrimary: Colors.white,
                             primary: Colors.indigo,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                           ),
                           child: const Text("Submit"),
                         ),
                       ),
                       const SizedBox(
                         height: 50,
-                      )
+                      ),
                     ],
                   ),
                 ),
