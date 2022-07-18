@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:scouting_app/robot_gallery/robot_details.dart';
 import 'package:scouting_app/system/fetch/controller_gallery.dart';
