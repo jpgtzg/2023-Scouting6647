@@ -65,7 +65,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                 const SizedBox(
                   height: 75,
                 ),
-                SizedBox(
+                Container(
                   height: 60,
                   width: 200,
                   child: ElevatedButton(
@@ -78,7 +78,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                           MaterialStateProperty.all<Color>(Colors.indigo),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                     ),
@@ -93,7 +93,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                 const SizedBox(
                   height: 80,
                 ),
-                SizedBox(
+                Container(
                   height: 60,
                   width: 200,
                   child: ElevatedButton(
@@ -106,7 +106,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                           MaterialStateProperty.all<Color>(Colors.indigo),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                     ),
