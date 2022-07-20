@@ -60,7 +60,8 @@ class _RobotListState extends State<RobotList> {
                     shrinkWrap: false,
                     itemCount: feedbackItems.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return RobotCard(feedbackItems: feedbackItems, robotIndex: index);
+                      return RobotCard(
+                          feedbackItems: feedbackItems, robotIndex: index);
                     },
                   ),
                 ),
@@ -78,7 +79,8 @@ class RobotCard extends StatelessWidget {
   List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
   final int robotIndex;
 
-  RobotCard({Key? key, required this.feedbackItems, required this.robotIndex}) : super(key: key);
+  RobotCard({Key? key, required this.feedbackItems, required this.robotIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,7 @@ class RobotCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => RobotDetails(
                   "${feedbackItems[robotIndex].number}",
+                  robotIndex,
                 ),
               ),
             );
