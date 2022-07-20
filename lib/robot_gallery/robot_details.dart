@@ -6,12 +6,12 @@ import 'package:scouting_app/widgets/mod_topbar.dart';
 
 // ignore: must_be_immutable
 class RobotDetails extends StatelessWidget {
-  List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
   int robotIndex;
 
   String teamNumber;
 
   RobotDetails(this.teamNumber, this.robotIndex);
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class RobotDetails extends StatelessWidget {
                       child: TabBarView(
                         children: [
                           MatchDetails(),
-                          PitDetails(),
+                          PitDetails(teamNumber),
                         ],
                       ),
                     )
