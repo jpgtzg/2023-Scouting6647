@@ -1,5 +1,4 @@
 import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
 import 'package:scouting_app/system/pit/feedback_pit.dart';
 
 

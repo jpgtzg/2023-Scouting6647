@@ -1,12 +1,12 @@
 class FeedbackPit {
-  String _nameteam;
   String _numteam;
+  String _nameteam;
   String _chasis;
   String _wheel;
 
   FeedbackPit(
-    this._nameteam,
     this._numteam,
+    this._nameteam,
     this._chasis,
     this._wheel,
   );

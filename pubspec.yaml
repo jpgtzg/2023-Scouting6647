@@ -22,6 +22,7 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   http: ^0.13.4
   sliding_up_panel: ^2.0.0+1
+  gsheets: ^0.4.2
   
 
 dev_dependencies:
