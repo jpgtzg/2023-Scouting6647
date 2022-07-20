@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/pit/controller_pit.dart';
 import 'package:scouting_app/system/pit/feedback_pit.dart';
+import 'package:scouting_app/widgets/mod_topbar.dart';
 
 import '../widgets/topbar.dart';
 import '../widgets/numberform.dart';
@@ -66,35 +67,7 @@ class _AddPagePitState extends State<AddPagePit> {
         key: _formKey,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Image(
-                      height: 30,
-                      width: 30,
-                      image: AssetImage("assets/images/back.png"),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Back",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const TopBar(
-              topPadding: 0,
-            ),
+            ModTopBar(),
             Expanded(
               child: SingleChildScrollView(
                 child: Center(
