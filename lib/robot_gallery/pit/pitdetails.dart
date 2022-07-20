@@ -25,6 +25,7 @@ class _PitDetailsState extends State<PitDetails> {
           }
 
           final pit = snapshot.data;
+          print(pit?.length);
 
           return Padding(
             padding: const EdgeInsets.all(24.0),
