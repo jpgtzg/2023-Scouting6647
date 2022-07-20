@@ -30,7 +30,7 @@ class NewPitController {
 
   Future<List<Pit>> getAll() async {
     await init();
-    final pit = (await sheet.values.map.allRows())?.skip(1).toList();
+    final pit = (await sheet.values.map.allRows())?.skip(3).toList();
     return pit!.map((json) => Pit.fromGsheets(json)).toList();
   }
   
@@ -38,8 +38,8 @@ class NewPitController {
     await init();
     final map = await sheet.values.map.rowByKey(
       id,
-      fromColumn: 1,
-    );
+      fromColumn: 4,
+    );  
     return map == null ? null : Pit.fromGsheets(map);
-  }
+  } 
 }
