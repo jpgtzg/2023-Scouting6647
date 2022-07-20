@@ -14,8 +14,8 @@ class PitDetails extends StatefulWidget {
 class _PitDetailsState extends State<PitDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder<List<Pit>>(
+    return Container(
+      child: FutureBuilder<List<Pit>>(
         future: widget.newPitController.getAll(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -25,22 +25,29 @@ class _PitDetailsState extends State<PitDetails> {
           }
 
           final pit = snapshot.data;
-          print(pit?.length);
 
           return Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.only(right : 24.0, left : 24.0),
             child: ListView.builder(
               itemCount: pit == null ? 2 : pit.length,
               itemBuilder: (context, index) => pit == null
-                  ? Text("No data given")
-                  : Text("Number: " +
-                      (pit[index].number ?? '') +
-                      " Name: " +
-                      (pit[index].name ?? '') +
-                      " Chassis: " +
-                      (pit[index].chassis ?? '') +
-                      " Wheel Type: " +
-                      (pit[index].wheelType ?? '')),
+                  ? Text("No data given") //Just null check
+                  : Container(
+                      padding: EdgeInsets.only(
+                        top: 20,
+                        bottom: 20,
+                      ),
+                      child: Text(
+                        "Number: " +
+                            (pit[index].number ?? '') +
+                            " Name: " +
+                            (pit[index].name ?? '') +
+                            " Chassis: " +
+                            (pit[index].chassis ?? '') +
+                            " Wheel Type: " +
+                            (pit[index].wheelType ?? ''),
+                      ),
+                    ),
             ),
           );
         },

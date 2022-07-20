@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scouting_app/robot_gallery/match/matchdetails.dart';
 import 'package:scouting_app/robot_gallery/pit/pitdetails.dart';
 import 'package:scouting_app/system/fetch/feedback_gallery.dart';
-import 'package:scouting_app/widgets/topbar.dart';
+import 'package:scouting_app/widgets/mod_topbar.dart';
 
 // ignore: must_be_immutable
 class RobotDetails extends StatelessWidget {
@@ -21,38 +21,7 @@ class RobotDetails extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 50.0,
-              left: 10.0,
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Image(
-                    height: 30,
-                    width: 30,
-                    image: AssetImage("assets/images/back.png"),
-                  ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                const Text(
-                  "Back",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const TopBar(
-            topPadding: 0,
-          ),
+          ModTopBar(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20),

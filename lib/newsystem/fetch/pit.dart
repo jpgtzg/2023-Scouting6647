@@ -8,14 +8,14 @@ class Pit {
 
   @override
   String toString() =>
-      "?number=$number&name=$name&chassis=$chassis&wheelType=$wheelType";
+      'Pit{number: $number, name: $name, chassis: $chassis, wheelType: $wheelType}';
   
   factory Pit.fromGsheets(dynamic json) {
     return Pit(
-      number : "${json['number']}",
-      name : "${json['name']}",
-      chassis : "${json['chassis']}",
-      wheelType: "${json['wheelType']}"
+      number : json["number"],
+      name : json['name'],
+      chassis :  json['chassis'],
+      wheelType:  json['wheelType'],
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/feedback_match.dart';
-import 'package:scouting_app/widgets/topbar.dart';
+import 'package:scouting_app/widgets/mod_topbar.dart';
 import 'package:scouting_app/system/match/controller_match.dart';
 
 import '../widgets/numberform.dart';
@@ -94,35 +94,7 @@ class _AddPageMatchState extends State<AddPageMatch> {
         key: _formKey,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Image(
-                      height: 30,
-                      width: 30,
-                      image: AssetImage("assets/images/back.png"),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Back",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const TopBar(
-              topPadding: 0,
-            ),
+            ModTopBar(),
             Expanded(
               child: SingleChildScrollView(
                 child: Center(
