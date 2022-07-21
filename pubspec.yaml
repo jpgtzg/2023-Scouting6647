@@ -55,6 +55,22 @@ flutter:
     - assets/images/
     - assets/icons/
 
+  fonts: 
+    - family: Manrope
+      fonts:
+        - asset: fonts/Manrope-Regular.ttf
+        - asset: fonts/Manrope-Bold.ttf
+          weight: 700
+    - family: Space Grotesk
+      fonts:
+       - asset: fonts/SpaceGrotesk-Regular.ttf
+    - family: Roboto Mono
+      fonts: 
+      - asset: fonts/RobotoMono-Regular.ttf
+      - asset: fonts/RobotoMono-Bold.ttf
+        weight: 700
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

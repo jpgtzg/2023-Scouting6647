@@ -59,6 +59,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                 const Text(
                   "Choose a scouting sheet",
                   style: TextStyle(
+                    fontFamily: "Manrope",
                     fontSize: 25,
                     color: const Color(0xffFFFFFF),
                     fontWeight: FontWeight.bold,
@@ -88,8 +89,9 @@ class _AddPageManagerState extends State<AddPageManager> {
                     child: const Text(
                       "Match scouting",
                       style: TextStyle(
-                        fontSize: 20,
-                      ),
+                          fontSize: 20,
+                          fontFamily: "Manrope",
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -117,8 +119,9 @@ class _AddPageManagerState extends State<AddPageManager> {
                     child: const Text(
                       "Pit scouting",
                       style: TextStyle(
-                        fontSize: 20,
-                      ),
+                          fontSize: 20,
+                          fontFamily: "Manrope",
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

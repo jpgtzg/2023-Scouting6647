@@ -43,17 +43,26 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
             },
             items: <BottomNavyBarItem>[
               BottomNavyBarItem(
-                title: const Text('Home'),
+                title: const Text(
+                  'Home',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
                 icon: const Icon(Icons.home),
                 activeColor: const Color(0xff2356A2),
               ),
               BottomNavyBarItem(
-                title: const Text('Robots'),
+                title: const Text(
+                  'Robots',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
                 icon: const Icon(Icons.apps),
                 activeColor: const Color(0xff2356A2),
               ),
               BottomNavyBarItem(
-                title: const Text('Settings'),
+                title: const Text(
+                  'Settings',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
                 icon: const Icon(Icons.settings),
                 activeColor: const Color(0xff2356A2),
               ),

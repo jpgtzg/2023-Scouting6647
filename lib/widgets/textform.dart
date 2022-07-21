@@ -27,7 +27,7 @@ class TextForm extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-                fontFamily: "Oxygen",
+                fontFamily: "Manrope",
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontSize: 20,
