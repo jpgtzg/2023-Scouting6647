@@ -11,11 +11,11 @@ class Pit {
       'Pit{number: $number, name: $name, chassis: $chassis, wheelType: $wheelType}';
   
   factory Pit.fromGsheets(dynamic json) {
-    return Pit(
-      number : json["number"],
-      name : json['name'],
-      chassis :  json['chassis'],
-      wheelType:  json['wheelType'],
+    return Pit( //MAKE SURE THESE ARE THE SAME AS IN THE GOOGLE SHEETS
+      number : json["Number"],
+      name : json['Name'],
+      chassis :  json['Chassis Type'],
+      wheelType:  json['Wheel Type'],
     );
   }
 
