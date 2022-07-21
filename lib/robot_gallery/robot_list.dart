@@ -95,7 +95,7 @@ class RobotCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => RobotDetails(
                   "${feedbackItems[robotIndex].number}",
-                  robotIndex,
+                  "${feedbackItems[robotIndex].image}",
                 ),
               ),
             );

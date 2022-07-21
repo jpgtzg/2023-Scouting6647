@@ -21,18 +21,18 @@ class _AddPageManagerState extends State<AddPageManager> {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top : 125.0),
+          padding: const EdgeInsets.only(top: 125.0),
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                   colorFilter: ColorFilter.mode(
-                      Colors.blue.withOpacity(0.3), BlendMode.srcOver),
+                      const Color(0xff4DAAE8).withOpacity(0.3),
+                      BlendMode.srcOver),
                   image: image1,
                   fit: BoxFit.cover),
             ),
           ),
         ),
-        
 
         // Padding(
         //   padding: const EdgeInsets.only(top: 125.0),
@@ -48,17 +48,19 @@ class _AddPageManagerState extends State<AddPageManager> {
         //   ),
         // ),
 
-
         Padding(
           padding: const EdgeInsets.only(top: 200),
           child: Center(
             child: Column(
               children: [
+                SizedBox(
+                  height: 10,
+                ),
                 const Text(
                   "Choose a scouting sheet",
                   style: TextStyle(
                     fontSize: 25,
-                    color: Colors.white,
+                    color: const Color(0xffFFFFFF),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -74,8 +76,9 @@ class _AddPageManagerState extends State<AddPageManager> {
                           builder: (context) => const AddPageMatch()));
                     },
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.indigo),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xff2356A2),
+                      ),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
@@ -102,8 +105,9 @@ class _AddPageManagerState extends State<AddPageManager> {
                           builder: (context) => const AddPagePit()));
                     },
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.indigo),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xff2356A2),
+                      ),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),

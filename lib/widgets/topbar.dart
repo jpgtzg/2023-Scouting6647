@@ -28,7 +28,7 @@ class TopBar extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: "Oxygen",
                     fontWeight: FontWeight.bold,
-                    color: Colors.indigo,
+                    color: const Color(0xff2356A2),
                     fontSize: 25,
                   ),
                 )),
