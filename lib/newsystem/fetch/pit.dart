@@ -14,7 +14,7 @@ class Pit {
     return Pit( //MAKE SURE THESE ARE THE SAME AS IN THE GOOGLE SHEETS
       number : json["Number"],
       name : json['Name'],
-      chassis :  json['Chassis Type'],
+      chassis :  json['Chassis type'],
       wheelType:  json['Wheel Type'],
     );
   }
