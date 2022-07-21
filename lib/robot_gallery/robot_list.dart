@@ -132,7 +132,7 @@ class RobotCard extends StatelessWidget {
                           "${feedbackItems[robotIndex].number}\n${feedbackItems[robotIndex].name}",
                           textAlign: TextAlign.left,
                           style: const TextStyle(
-                            fontFamily: "Poppins",
+                            fontFamily: "Roboto Mono",
                             color: Colors.white,
                             fontSize: 20,
                           ),

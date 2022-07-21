@@ -29,6 +29,7 @@ class ModTopBar extends StatelessWidget {
               const Text(
                 "Back",
                 style: TextStyle(
+                  fontFamily: "Manrope",
                   fontSize: 18,
                 ),
               ),

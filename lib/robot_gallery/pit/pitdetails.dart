@@ -33,6 +33,9 @@ class _PitDetailsState extends State<PitDetails> {
             if (pit != null) {
               return Column(
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   Expanded(
                     child: SingleChildScrollView(
                       physics: ScrollPhysics(),
@@ -68,12 +71,12 @@ class _PitDetailsState extends State<PitDetails> {
                                   const EdgeInsets.only(left: 30.0, right: 30),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
                                     "Team " + (pit.number ?? ''),
                                     style: const TextStyle(
-                                      fontFamily: "Oxygen",
+                                      fontFamily: "Roboto Mono",
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black87,
                                       fontSize: 20,
@@ -81,11 +84,12 @@ class _PitDetailsState extends State<PitDetails> {
                                   ),
                                   Text(
                                     (pit.name ?? ''),
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black87,
-                                        fontSize: 20,
-                                      ),
+                                    style: const TextStyle(
+                                      fontFamily: "Roboto Mono",
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black87,
+                                      fontSize: 20,
+                                    ),
                                     // ),
                                   ),
                                 ],
@@ -115,7 +119,7 @@ class _PitDetailsState extends State<PitDetails> {
                                 child: Text(
                                   "Robot Info",
                                   style: const TextStyle(
-                                    fontFamily: "Oxygen",
+                                    fontFamily: "Space Grotesk",
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black87,
                                     fontSize: 20,
@@ -126,12 +130,18 @@ class _PitDetailsState extends State<PitDetails> {
                             Text(
                               "Chassis: " + (pit.chassis ?? ''),
                               style: TextStyle(
-                                  fontSize: 20, color: Colors.black87),
+                                fontSize: 20,
+                                color: Colors.black87,
+                                fontFamily: "Manrope",
+                              ),
                             ),
                             Text(
                               "Wheel Type: " + (pit.wheelType ?? ''),
                               style: TextStyle(
-                                  fontSize: 20, color: Colors.black87),
+                                fontSize: 20,
+                                color: Colors.black87,
+                                fontFamily: "Manrope",
+                              ),
                             ),
                             SizedBox(
                               height: 40,

@@ -28,7 +28,7 @@ class FormDivider extends StatelessWidget {
             child: Text(
               dividerText,
               style: const TextStyle(
-                fontFamily: "Oxygen",
+                fontFamily: "Manrope",
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontSize: 20,
