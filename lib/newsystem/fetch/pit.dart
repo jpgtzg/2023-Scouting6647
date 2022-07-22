@@ -15,7 +15,7 @@ class Pit {
       number : json["Number"],
       name : json['Name'],
       chassis :  json['Chassis type'],
-      wheelType:  json['Wheel Type'],
+      wheelType:  json['Wheel type'],
     );
   }
 
