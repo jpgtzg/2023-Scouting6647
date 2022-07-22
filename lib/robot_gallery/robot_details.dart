@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/robot_gallery/match/matchdetails.dart';
 import 'package:scouting_app/robot_gallery/pit/pitdetails.dart';
-import 'package:scouting_app/system/fetch/feedback_gallery.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
 // ignore: must_be_immutable
@@ -52,7 +51,7 @@ class RobotDetails extends StatelessWidget {
                     Expanded(
                       child: TabBarView(
                         children: [
-                          MatchDetails(),
+                          MatchDetails(teamNumber),
                           PitDetails(teamNumber, image),
                         ],
                       ),

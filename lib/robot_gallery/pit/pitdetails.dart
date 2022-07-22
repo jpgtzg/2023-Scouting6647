@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/newsystem/fetch/pit.dart';
 import 'package:scouting_app/newsystem/fetch/newpitcontroller.dart';
-import 'package:scouting_app/widgets/formdivider.dart';
 
 class PitDetails extends StatefulWidget {
   late NewPitController newPitController = new NewPitController();
