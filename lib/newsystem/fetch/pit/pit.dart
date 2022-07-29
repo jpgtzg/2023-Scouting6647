@@ -11,7 +11,7 @@ class Pit {
       'Pit{number: $number, name: $name, chassis: $chassis, wheelType: $wheelType}';
   
   factory Pit.fromGsheets(dynamic json) {
-    return Pit( //MAKE SURE THESE ARE THE SAME AS IN THE GOOGLE SHEETS
+    return Pit(
       number : json["Number"],
       name : json['Name'],
       chassis :  json['Chassis type'],
@@ -21,10 +21,10 @@ class Pit {
 
   Map<String, dynamic> toGsheets() {
     return {
-      'number': number,
-      'name': name,
-      'chassis': chassis,
-      'wheelType': wheelType,
+      'Number': number,
+      'Name': name,
+      'Chassis type': chassis,
+      'Wheel type': wheelType,
     };
   }
 }

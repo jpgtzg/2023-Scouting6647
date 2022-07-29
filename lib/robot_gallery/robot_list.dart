@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:scouting_app/newsystem/fetch/list/list.dart';
+import 'package:scouting_app/newsystem/fetch/list/listcontroller.dart';
 import 'package:scouting_app/robot_gallery/robot_details.dart';
-import 'package:scouting_app/system/fetch/controller_gallery.dart';
 import 'package:scouting_app/system/fetch/feedback_gallery.dart';
 
-class RobotList extends StatefulWidget {
-  RobotList({Key? key}) : super(key: key);
+class ListGallery extends StatefulWidget {
+  late ListController listController = new ListController();
+
+  ListGallery({Key? key}) : super(key: key);
 
   @override
-  State<RobotList> createState() => _RobotListState();
+  State<ListGallery> createState() => _ListGalleryState();
 }
 
-class _RobotListState extends State<RobotList> {
-  List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
-
-  @override
-  void initState() {
-    super.initState();
-
-    GalleryController().getFeedbackList().then((feedbackItems) {
-      setState(() {
-        this.feedbackItems = feedbackItems;
-      });
-    });
-  }
-
+class _ListGalleryState extends State<ListGallery> {
   @override
   Widget build(BuildContext context) {
     AssetImage image3 = AssetImage("assets/images/background/back1.jpeg");
@@ -55,13 +45,26 @@ class _RobotListState extends State<RobotList> {
                     right: 10,
                     top: 100,
                   ),
-                  child: ListView.builder(
-                    physics: ScrollPhysics(),
-                    shrinkWrap: false,
-                    itemCount: feedbackItems.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return RobotCard(
-                          feedbackItems: feedbackItems, robotIndex: index);
+                  child: FutureBuilder<List<RobotList>>(
+                    future: widget.listController.getAll(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+
+                      final robotList = snapshot.data;
+
+                      return ListView.builder(
+                        physics: ScrollPhysics(),
+                        shrinkWrap: false,
+                        itemCount: robotList!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return RobotCard(
+                              robotList: robotList, robotIndex: index);
+                        },
+                      );
                     },
                   ),
                 ),
@@ -76,10 +79,10 @@ class _RobotListState extends State<RobotList> {
 
 // ignore: must_be_immutable
 class RobotCard extends StatelessWidget {
-  List<FeedbackGallery> feedbackItems = <FeedbackGallery>[];
+  List<RobotList> robotList = <RobotList>[];
   final int robotIndex;
 
-  RobotCard({Key? key, required this.feedbackItems, required this.robotIndex})
+  RobotCard({Key? key, required this.robotList, required this.robotIndex})
       : super(key: key);
 
   @override
@@ -94,8 +97,8 @@ class RobotCard extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => RobotDetails(
-                  "${feedbackItems[robotIndex].number}",
-                  "${feedbackItems[robotIndex].image}",
+                  "${robotList[robotIndex].number}",
+                  "${robotList[robotIndex].image}",
                 ),
               ),
             );
@@ -106,7 +109,7 @@ class RobotCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  "${feedbackItems[robotIndex].image}",
+                  "${robotList[robotIndex].image}",
                 ),
                 fit: BoxFit.cover,
               ),
@@ -129,7 +132,7 @@ class RobotCard extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "${feedbackItems[robotIndex].number}\n${feedbackItems[robotIndex].name}",
+                          "${robotList[robotIndex].number}\n${robotList[robotIndex].name}",
                           textAlign: TextAlign.left,
                           style: const TextStyle(
                             fontFamily: "Roboto Mono",

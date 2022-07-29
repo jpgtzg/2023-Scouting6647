@@ -1,5 +1,5 @@
 import 'package:gsheets/gsheets.dart';
-import 'package:scouting_app/newsystem/fetch/match.dart';
+import 'package:scouting_app/newsystem/fetch/pit/pit.dart';
 
 const credentials = r'''
 {
@@ -16,46 +16,50 @@ const credentials = r'''
 }
 ''';
 
-const spreadsheetId = "10jLgLMa0GabdLGPh_Uj00OUHj8mjxuhcQemTuj9Y328";
+const spreadsheetId = "1SObZaZYBlGRs0zmIKmKDqBo4EbMspx0myWsBqU_xwHc";
 
-class NewMatchController {
-  final GSheets _gsheets = GSheets(credentials);
+class NewPitController {
+  final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
 
   Future<void> init() async {
-    spreadsheet = await _gsheets.spreadsheet(spreadsheetId);
-    sheet = (await spreadsheet.worksheetByTitle('match'))!;
+    spreadsheet = await gsheets.spreadsheet(spreadsheetId);
+    sheet = (await spreadsheet.worksheetByTitle('pit'))!;
   }
 
-  Future<List<Match>?> getAll() async {
+  Future<List<Pit>> getAll() async {
     await init();
-    final match = (await sheet.values.map.allRows());
-    return match?.map((json) => Match.fromGsheets(json)).toList();
+    final pit = (await sheet.values.map.allRows());
+    return pit!.map((json) => Pit.fromGsheets(json)).toList();
   }
 
-  Future<Match?> getById(int id) async {
+  Future<Pit?> getById(int id) async {
     await init();
     final map = await sheet.values.map.rowByKey(
       id,
       fromColumn: 1,
     );
-    return map == null ? null : Match.fromGsheets(map);
+    print(map.runtimeType);
+    return map == null ? null : Pit.fromGsheets(map);
   }
 
-  Future<List<Match>> getAllByID(int id) async {
+  Future<List<Pit>> getAllByID(int id) async {
     await init();
 
     //GETS ALL ROWS
     final pit = (await sheet.values.map.allRows());
-    final allrows = pit!.map((json) => Match.fromGsheets(json)).toList();
+    final allrows = pit!.map((json) => Pit.fromGsheets(json)).toList();
 
-    List<Match> rows = <Match>[];
+    List<Pit> rows = <Pit>[];
 
     for (var row in allrows) {
       if (row.number == id.toString()) {
         rows.add(row);
-      }
+        print(rows);
+        print("----");
+      } else
+        print("Hi");
     }
     return rows;
   }
