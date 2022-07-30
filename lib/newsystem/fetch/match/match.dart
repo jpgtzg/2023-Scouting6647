@@ -83,8 +83,8 @@ class Match {
 
   Map<String, dynamic> toGsheets() {
     return {
-      'number': number,
-      'name': name,
+      'Number': number,
+      'Name': name,
       'Match number': matchnum,
       'Match type': matchtype,
       'Alliance': alliance,
