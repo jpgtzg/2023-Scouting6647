@@ -63,4 +63,10 @@ class NewPitController {
     }
     return rows;
   }
+
+    Future<void> insertData(Pit match) async{
+    await init();
+    final list = match.toGsheets();
+    await sheet.values.map.appendRow(list);
+  }
 }

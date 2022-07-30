@@ -59,4 +59,10 @@ class NewMatchController {
     }
     return rows;
   }
+
+  Future<void> insertData(Match match) async{
+    await init();
+    final list = match.toGsheets();
+    await sheet.values.map.appendRow(list);
+  }
 }

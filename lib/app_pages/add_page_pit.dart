@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/pit/controller_pit.dart';
-import 'package:scouting_app/system/pit/feedback_pit.dart';
+import 'package:scouting_app/newsystem/fetch/pit/newpitcontroller.dart';
+import 'package:scouting_app/newsystem/fetch/pit/pit.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
-import '../widgets/topbar.dart';
 import '../widgets/numberform.dart';
-import '../widgets/formdivider.dart';
 import '../widgets/textform.dart';
 
 class AddPagePit extends StatefulWidget {
@@ -27,24 +25,18 @@ class _AddPagePitState extends State<AddPagePit> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      FeedbackPit feedbackForm = FeedbackPit(
-        nameteamController.text,
-        numteamController.text,
-        chasisController.text,
-        wheelController.text,
+      Pit feedbackPit = Pit(
+        number: nameteamController.text,
+        name: numteamController.text,
+        chassis: chasisController.text,
+        wheelType: wheelController.text,
       );
 
-      PitController formController = PitController((String response) {
-        print(response);
-        if (response == PitController.STATUS_SUCCESS) {
-          _showSnackBar("Data has been sent");
-        } else {
-          _showSnackBar("An error has ocurred, try again later");
-        }
-      });
+      NewPitController formPit = new NewPitController();
+
 
       _showSnackBar("Sending information");
-      formController.submitForm(feedbackForm);
+      formPit.insertData(feedbackPit);
     }
   }
 

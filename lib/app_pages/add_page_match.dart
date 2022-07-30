@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/match/feedback_match.dart';
+import 'package:scouting_app/newsystem/fetch/match/match.dart';
+import 'package:scouting_app/newsystem/fetch/match/newmatchcontroller.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
-import 'package:scouting_app/system/match/controller_match.dart';
 
 import '../widgets/numberform.dart';
 import '../widgets/formdivider.dart';
@@ -41,39 +41,32 @@ class _AddPageMatchState extends State<AddPageMatch> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      FeedbackMatch feedbackMatch = FeedbackMatch(
-        numteamController.text,
-        nameteamController.text,
-        matchnumController.text,
-        matchtypeController.text,
-        allianceController.text,
-        tarmacautoController.text,
-        lowerautoController.text,
-        upperautoController.text,
-        lowerteleopController.text,
-        upperteleopController.text,
-        defendedController.text,
-        gotdefendedController.text,
-        rungController.text,
-        foulsController.text,
-        techfoulsController.text,
-        alliancescoreController.text,
-        rpController.text,
-        wonController.text,
-        commentController.text,
+      Match feedbackMatch = Match(
+        number: numteamController.text,
+        name: nameteamController.text,
+        matchnum: matchnumController.text,
+        matchtype: matchtypeController.text,
+        alliance: allianceController.text,
+        tarmacauto: tarmacautoController.text,
+        lowerauto: lowerautoController.text,
+        upperauto: upperteleopController.text,
+        lowerteleop: lowerteleopController.text,
+        upperteleop: upperteleopController.text,
+        defended: defendedController.text,
+        gotdefended: gotdefendedController.text,
+        rung: rungController.text,
+        fouls: foulsController.text,
+        techfouls: techfoulsController.text,
+        alliancescore: alliancescoreController.text,
+        rp: rpController.text,
+        won: wonController.text,
+        comments: commentController.text,
       );
 
-      MatchController formMatch = MatchController((String response) {
-        print(response);
-        if (response == MatchController.STATUS_SUCCESS) {
-          _showSnackBar("Data has been sent");
-        } else {
-          _showSnackBar("An error has ocurred, try again later");
-        }
-      });
+      NewMatchController formMatch = new NewMatchController();
 
       _showSnackBar("Sending infromation");
-      formMatch.submitForm(feedbackMatch);
+      formMatch.insertData(feedbackMatch);
     }
   }
 
