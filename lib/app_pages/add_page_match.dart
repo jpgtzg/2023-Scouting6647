@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/match.dart';
-import 'package:scouting_app/system/match/newmatchcontroller.dart';
+import 'package:scouting_app/system/match/matchcontroller.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
 import '../widgets/numberform.dart';
@@ -63,7 +63,7 @@ class _AddPageMatchState extends State<AddPageMatch> {
         comments: commentController.text,
       );
 
-      NewMatchController formMatch = new NewMatchController();
+      MatchController formMatch = new MatchController();
 
       _showSnackBar("Sending infromation");
       formMatch.insertData(feedbackMatch);

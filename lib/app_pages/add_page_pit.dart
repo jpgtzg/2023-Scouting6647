@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/pit/newpitcontroller.dart';
+import 'package:scouting_app/system/pit/pitcontroller.dart';
 import 'package:scouting_app/system/pit/pit.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
@@ -32,7 +32,7 @@ class _AddPagePitState extends State<AddPagePit> {
         wheelType: wheelController.text,
       );
 
-      NewPitController formPit = new NewPitController();
+      PitController formPit = new PitController();
 
 
       _showSnackBar("Sending information");
