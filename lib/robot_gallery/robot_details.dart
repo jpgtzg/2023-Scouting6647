@@ -14,7 +14,6 @@ class RobotDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     AssetImage image3 = AssetImage("assets/images/background/back2.jpeg");
     precacheImage(image3, context);
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [

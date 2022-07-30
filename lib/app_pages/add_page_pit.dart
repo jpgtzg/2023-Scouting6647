@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/newsystem/fetch/pit/newpitcontroller.dart';
-import 'package:scouting_app/newsystem/fetch/pit/pit.dart';
+import 'package:scouting_app/system/pit/newpitcontroller.dart';
+import 'package:scouting_app/system/pit/pit.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
 import '../widgets/numberform.dart';
@@ -26,8 +26,8 @@ class _AddPagePitState extends State<AddPagePit> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       Pit feedbackPit = Pit(
-        number: nameteamController.text,
-        name: numteamController.text,
+        number: numteamController.text,
+        name: nameteamController.text,
         chassis: chasisController.text,
         wheelType: wheelController.text,
       );

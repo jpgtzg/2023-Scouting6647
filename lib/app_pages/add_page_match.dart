@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/newsystem/fetch/match/match.dart';
-import 'package:scouting_app/newsystem/fetch/match/newmatchcontroller.dart';
+import 'package:scouting_app/system/match/match.dart';
+import 'package:scouting_app/system/match/newmatchcontroller.dart';
 import 'package:scouting_app/widgets/mod_topbar.dart';
 
 import '../widgets/numberform.dart';
