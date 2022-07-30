@@ -1,5 +1,5 @@
 import 'package:gsheets/gsheets.dart';
-import 'package:scouting_app/newsystem/fetch/pit/pit.dart';
+import 'package:scouting_app/system/match/match.dart';
 
 const credentials = r'''
 {
@@ -16,55 +16,51 @@ const credentials = r'''
 }
 ''';
 
-const spreadsheetId = "1SObZaZYBlGRs0zmIKmKDqBo4EbMspx0myWsBqU_xwHc";
+const spreadsheetId = "10jLgLMa0GabdLGPh_Uj00OUHj8mjxuhcQemTuj9Y328";
 
-class NewPitController {
+class NewMatchController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
 
   Future<void> init() async {
     spreadsheet = await gsheets.spreadsheet(spreadsheetId);
-    sheet = (await spreadsheet.worksheetByTitle('pit'))!;
+    sheet = (await spreadsheet.worksheetByTitle('match'))!;
   }
 
-  Future<List<Pit>> getAll() async {
+  Future<List<Match>?> getAll() async {
     await init();
-    final pit = (await sheet.values.map.allRows());
-    return pit!.map((json) => Pit.fromGsheets(json)).toList();
+    final match = (await sheet.values.map.allRows());
+    return match?.map((json) => Match.fromGsheets(json)).toList();
   }
 
-  Future<Pit?> getById(int id) async {
+  Future<Match?> getById(int id) async {
     await init();
     final map = await sheet.values.map.rowByKey(
       id,
       fromColumn: 1,
     );
-    print(map.runtimeType);
-    return map == null ? null : Pit.fromGsheets(map);
+    return map == null ? null : Match.fromGsheets(map);
   }
 
-  Future<List<Pit>> getAllByID(int id) async {
+  Future<List<Match>> getAllByID(int id) async {
     await init();
 
     //GETS ALL ROWS
     final pit = (await sheet.values.map.allRows());
-    final allrows = pit!.map((json) => Pit.fromGsheets(json)).toList();
+    final allrows = pit!.map((json) => Match.fromGsheets(json)).toList();
 
-    List<Pit> rows = <Pit>[];
+    List<Match> rows = <Match>[];
 
     for (var row in allrows) {
       if (row.number == id.toString()) {
         rows.add(row);
-        print(rows);
-        print("----");
-      } else
-        print("Hi");
+      }
     }
     return rows;
   }
 
-    Future<void> insertData(Pit match) async{
+  Future<void> insertData(Match match) async{
     await init();
     final list = match.toGsheets();
     await sheet.values.map.appendRow(list);

@@ -1,5 +1,5 @@
 import 'package:gsheets/gsheets.dart';
-import 'package:scouting_app/newsystem/fetch/list/list.dart';
+import 'package:scouting_app/system/pit/pit.dart';
 
 const credentials = r'''
 {
@@ -16,21 +16,57 @@ const credentials = r'''
 }
 ''';
 
-const spreadsheetId = "1-ruP6V7oNfwpXa4AZL7OdtjHEfAYrLGcFQk7_sEi284";
+const spreadsheetId = "1SObZaZYBlGRs0zmIKmKDqBo4EbMspx0myWsBqU_xwHc";
 
-class ListController {
+class NewPitController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
 
   Future<void> init() async {
     spreadsheet = await gsheets.spreadsheet(spreadsheetId);
-    sheet = (await spreadsheet.worksheetByTitle('list'))!; //TODO: CHANGEEE
+    sheet = (await spreadsheet.worksheetByTitle('pit'))!;
   }
 
-  Future<List<RobotList>> getAll() async {
+  Future<List<Pit>> getAll() async {
     await init();
-    final robotList = (await sheet.values.map.allRows())?.toList();
-    return robotList!.map((json) => RobotList.fromGsheets(json)).toList();
+    final pit = (await sheet.values.map.allRows());
+    return pit!.map((json) => Pit.fromGsheets(json)).toList();
+  }
+
+  Future<Pit?> getById(int id) async {
+    await init();
+    final map = await sheet.values.map.rowByKey(
+      id,
+      fromColumn: 1,
+    );
+    print(map.runtimeType);
+    return map == null ? null : Pit.fromGsheets(map);
+  }
+
+  Future<List<Pit>> getAllByID(int id) async {
+    await init();
+
+    //GETS ALL ROWS
+    final pit = (await sheet.values.map.allRows());
+    final allrows = pit!.map((json) => Pit.fromGsheets(json)).toList();
+
+    List<Pit> rows = <Pit>[];
+
+    for (var row in allrows) {
+      if (row.number == id.toString()) {
+        rows.add(row);
+        print(rows);
+        print("----");
+      } else
+        print("Hi");
+    }
+    return rows;
+  }
+
+    Future<void> insertData(Pit match) async{
+    await init();
+    final list = match.toGsheets();
+    await sheet.values.map.appendRow(list);
   }
 }

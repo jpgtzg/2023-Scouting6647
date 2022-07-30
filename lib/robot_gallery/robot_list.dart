@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/newsystem/fetch/list/list.dart';
-import 'package:scouting_app/newsystem/fetch/list/listcontroller.dart';
+import 'package:scouting_app/system/list/list.dart';
+import 'package:scouting_app/system/list/listcontroller.dart';
 import 'package:scouting_app/robot_gallery/robot_details.dart';
-import 'package:scouting_app/system/fetch/feedback_gallery.dart';
 
 class ListGallery extends StatefulWidget {
   late ListController listController = new ListController();
