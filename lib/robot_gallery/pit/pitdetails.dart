@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/pit/pit.dart';
-import 'package:scouting_app/system/pit/newpitcontroller.dart';
+import 'package:scouting_app/system/pit/pitcontroller.dart';
 
 class PitDetails extends StatefulWidget {
-  late NewPitController newPitController = new NewPitController();
+  late PitController newPitController = new PitController();
   String teamNum;
   String image;
 

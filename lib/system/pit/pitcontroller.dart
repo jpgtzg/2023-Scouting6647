@@ -18,7 +18,7 @@ const credentials = r'''
 
 const spreadsheetId = "1SObZaZYBlGRs0zmIKmKDqBo4EbMspx0myWsBqU_xwHc";
 
-class NewPitController {
+class PitController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
