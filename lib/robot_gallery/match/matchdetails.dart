@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/match.dart';
-import 'package:scouting_app/system/match/newmatchcontroller.dart';
+import 'package:scouting_app/system/match/matchcontroller.dart';
 
 /**
  * This code needs refactoring 
  */
 
 class MatchDetails extends StatefulWidget {
-  late NewMatchController newMatchController = new NewMatchController();
+  late MatchController newMatchController = new MatchController();
   String teamNum;
 
   MatchDetails(this.teamNum);
