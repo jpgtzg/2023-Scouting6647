@@ -9,11 +9,15 @@ class AddPageManager extends StatefulWidget {
   State<AddPageManager> createState() => _AddPageManagerState();
 }
 
-//
-
 class _AddPageManagerState extends State<AddPageManager> {
   @override
   Widget build(BuildContext context) {
+    AssetImage image1 = AssetImage("assets/images/background/back3.jpeg");
+    precacheImage(image1, context);
+    AssetImage image2 = AssetImage("assets/images/background/back5.jpeg");
+    precacheImage(image2, context);
+    AssetImage image3 = AssetImage("assets/images/background/back2.jpeg");
+    precacheImage(image3, context);
     return Stack(
       children: [
         Padding(
@@ -43,6 +47,7 @@ class _AddPageManagerState extends State<AddPageManager> {
         //     ),
         //   ),
         // ),
+
         Padding(
           padding: const EdgeInsets.only(top: 200),
           child: Center(

@@ -12,16 +12,13 @@ Team #6647's official app for team and robot scouting during competitions
   + [X] AddPagePit
     + [X] Add functionality 
     + [X] Create design
-* [X] Create layout for robot data page
-  + [X] Add connectivity to database
+* [ ] Create layout for robot data page
+  + [ ] Add connectivity to database
   + [ ] Add search bar
-  + [X] Create RobotDetails() 
+  + [ ] Create RobotDetails() 
 * [ ] Create settings tab
 * [ ] Change colors for RobotList()
 * [ ] Verify size compatibility for different devices
-* [ ] Comment code
-* [ ] Add connectivity to The Blue Alliance API
-
 ## Authors
 
 * **Juan Pablo Gutiérrez** - [AndromedaHelix](https://github.com/AndromedaHelix)
