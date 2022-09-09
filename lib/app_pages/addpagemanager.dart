@@ -9,46 +9,26 @@ class AddPageManager extends StatefulWidget {
   State<AddPageManager> createState() => _AddPageManagerState();
 }
 
+//
+
 class _AddPageManagerState extends State<AddPageManager> {
   @override
   Widget build(BuildContext context) {
-    AssetImage image1 = AssetImage("assets/images/background/back3.jpeg");
-    precacheImage(image1, context);
-    AssetImage image2 = AssetImage("assets/images/background/back5.jpeg");
-    precacheImage(image2, context);
-    AssetImage image3 = AssetImage("assets/images/background/back2.jpeg");
-    precacheImage(image3, context);
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top : 125.0),
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                      Colors.blue.withOpacity(0.3), BlendMode.srcOver),
-                  image: image1,
-                  fit: BoxFit.cover),
+          padding: const EdgeInsets.only(top: 125.0),
+          child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                Image(image: AssetImage("assets/images/background/back2.jpeg")),
+                Image(image: AssetImage("assets/images/background/back3.jpeg")),
+                Image(image: AssetImage("assets/images/background/back1.jpeg")),
+              ],
             ),
           ),
         ),
-        
-
-        // Padding(
-        //   padding: const EdgeInsets.only(top: 125.0),
-        //   child: SingleChildScrollView(
-        //     physics: NeverScrollableScrollPhysics(),
-        //     child: Column(
-        //       children: [
-        //         Image(image: image3),
-        //         Image(image: image2),
-        //         Image(image: image1),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-
-
         Padding(
           padding: const EdgeInsets.only(top: 200),
           child: Center(
