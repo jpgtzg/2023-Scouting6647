@@ -26,9 +26,9 @@ class TopBar extends StatelessWidget {
                     child: Text(
                   "VOLTEC 6647",
                   style: TextStyle(
-                    fontFamily: "Oxygen",
+                    fontFamily: "Manrope",
                     fontWeight: FontWeight.bold,
-                    color: Colors.indigo,
+                    color: const Color(0xff2356A2),
                     fontSize: 25,
                   ),
                 )),

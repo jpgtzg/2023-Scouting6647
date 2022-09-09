@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/models/formdivider.dart';
-import 'package:scouting_app/models/numberform.dart';
-import 'package:scouting_app/models/textform.dart';
-import 'package:scouting_app/widgets/topbar.dart';
-import 'package:scouting_app/system/controller_match.dart';
-import 'package:scouting_app/system/feedback_match.dart';
+import 'package:scouting_app/system/match/match.dart';
+import 'package:scouting_app/system/match/matchcontroller.dart';
+import 'package:scouting_app/widgets/mod_topbar.dart';
+
+import '../widgets/numberform.dart';
+import '../widgets/formdivider.dart';
+import '../widgets/textform.dart';
 
 class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);
@@ -40,39 +41,32 @@ class _AddPageMatchState extends State<AddPageMatch> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      FeedbackMatch feedbackMatch = FeedbackMatch(
-        numteamController.text,
-        nameteamController.text,
-        matchnumController.text,
-        matchtypeController.text,
-        allianceController.text,
-        tarmacautoController.text,
-        lowerautoController.text,
-        upperautoController.text,
-        lowerteleopController.text,
-        upperteleopController.text,
-        defendedController.text,
-        gotdefendedController.text,
-        rungController.text,
-        foulsController.text,
-        techfoulsController.text,
-        alliancescoreController.text,
-        rpController.text,
-        wonController.text,
-        commentController.text,
+      Match feedbackMatch = Match(
+        number: numteamController.text,
+        name: nameteamController.text,
+        matchnum: matchnumController.text,
+        matchtype: matchtypeController.text,
+        alliance: allianceController.text,
+        tarmacauto: tarmacautoController.text,
+        lowerauto: lowerautoController.text,
+        upperauto: upperteleopController.text,
+        lowerteleop: lowerteleopController.text,
+        upperteleop: upperteleopController.text,
+        defended: defendedController.text,
+        gotdefended: gotdefendedController.text,
+        rung: rungController.text,
+        fouls: foulsController.text,
+        techfouls: techfoulsController.text,
+        alliancescore: alliancescoreController.text,
+        rp: rpController.text,
+        won: wonController.text,
+        comments: commentController.text,
       );
 
-      FormMatch formMatch = FormMatch((String response) {
-        print(response);
-        if (response == FormMatch.STATUS_SUCCESS) {
-          _showSnackBar("Data has been sent");
-        } else {
-          _showSnackBar("An error has ocurred, try again later");
-        }
-      });
+      MatchController formMatch = new MatchController();
 
       _showSnackBar("Sending infromation");
-      formMatch.submitForm(feedbackMatch);
+      formMatch.insertData(feedbackMatch);
     }
   }
 
@@ -93,35 +87,7 @@ class _AddPageMatchState extends State<AddPageMatch> {
         key: _formKey,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Image(
-                      height: 30,
-                      width: 30,
-                      image: AssetImage("assets/images/back.png"),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Back",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const TopBar(
-              topPadding: 0,
-            ),
+            ModTopBar(),
             Expanded(
               child: SingleChildScrollView(
                 child: Center(
@@ -249,9 +215,12 @@ class _AddPageMatchState extends State<AddPageMatch> {
                         padding: 0,
                         controller: commentController,
                       ),
-                      SizedBox(
-                        width: 150,
-                        height: 40,
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        width: 160,
+                        height: 45,
                         child: ElevatedButton(
                           onPressed: () {
                             _submitForm();
@@ -259,6 +228,8 @@ class _AddPageMatchState extends State<AddPageMatch> {
                           style: ElevatedButton.styleFrom(
                             onPrimary: Colors.white,
                             primary: Colors.indigo,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                           ),
                           child: const Text("Submit"),
                         ),

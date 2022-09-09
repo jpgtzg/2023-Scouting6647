@@ -2,8 +2,8 @@
 Team #6647's official app for team and robot scouting during competitions
 
 ## To do (For now)
-* [X] Update design for AddPageManager
-  + [X] Add background images
+* [ ] Update design for AddPageManager
+  + [ ] Add background images
   + [X] AddPagePit
 * [X] Create add pages 
   + [X] AddPageMatch
@@ -12,13 +12,11 @@ Team #6647's official app for team and robot scouting during competitions
   + [X] AddPagePit
     + [X] Add functionality 
     + [X] Create design
-* [X] Create layout for robot data page
-  + [X] Add connectivity to database
+* [ ] Create layout for robot data page
+  + [ ] Add connectivity to database
   + [ ] Add search bar
-  + [X] Create RobotDetails() 
+  + [ ] Create RobotDetails() 
 * [ ] Create settings tab
-* [ ] Comment code
-* [ ] Add connectivity to The Blue Alliance API
 
 ## Authors
 

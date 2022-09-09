@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:scouting_app/app_pages/add_page_match.dart';
 import 'package:scouting_app/app_pages/addpagemanager.dart';
+import 'package:scouting_app/robot_gallery/robot_list.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -28,9 +28,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               },
               children: <Widget>[
                 const AddPageManager(),
-                Container(
-                  color: Colors.red,
-                ),
+                ListGallery(),
                 Container(
                   color: Colors.green,
                 ),
@@ -45,16 +43,29 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
             },
             items: <BottomNavyBarItem>[
               BottomNavyBarItem(
-                title: const Text('Home'),
+                title: const Text(
+                  'Home',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
                 icon: const Icon(Icons.home),
+                activeColor: const Color(0xff2356A2),
               ),
               BottomNavyBarItem(
-                title: const Text('Robots'),
+                title: const Text(
+                  'Robots',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
                 icon: const Icon(Icons.apps),
+                activeColor: const Color(0xff2356A2),
               ),
               BottomNavyBarItem(
-                  title: const Text('Settings'),
-                  icon: const Icon(Icons.settings)),
+                title: const Text(
+                  'Settings',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
+                icon: const Icon(Icons.settings),
+                activeColor: const Color(0xff2356A2),
+              ),
             ],
           ),
         ),

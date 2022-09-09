@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/models/numberform.dart';
-import 'package:scouting_app/models/textform.dart';
-import 'package:scouting_app/system/controller.dart';
-import 'package:scouting_app/system/feedback_form.dart';
+import 'package:scouting_app/system/pit/pitcontroller.dart';
+import 'package:scouting_app/system/pit/pit.dart';
+import 'package:scouting_app/widgets/mod_topbar.dart';
 
-import '../widgets/topbar.dart';
+import '../widgets/numberform.dart';
+import '../widgets/textform.dart';
 
 class AddPagePit extends StatefulWidget {
   const AddPagePit({Key? key}) : super(key: key);
@@ -25,24 +25,18 @@ class _AddPagePitState extends State<AddPagePit> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      FeedbackForm feedbackForm = FeedbackForm(
-        nameteamController.text,
-        numteamController.text,
-        chasisController.text,
-        wheelController.text,
+      Pit feedbackPit = Pit(
+        number: numteamController.text,
+        name: nameteamController.text,
+        chassis: chasisController.text,
+        wheelType: wheelController.text,
       );
 
-      FormController formController = FormController((String response) {
-        print(response);
-        if (response == FormController.STATUS_SUCCESS) {
-          _showSnackBar("Data has been sent");
-        } else {
-          _showSnackBar("An error has ocurred, try again later");
-        }
-      });
+      PitController formPit = new PitController();
+
 
       _showSnackBar("Sending information");
-      formController.submitForm(feedbackForm);
+      formPit.insertData(feedbackPit);
     }
   }
 
@@ -65,52 +59,24 @@ class _AddPagePitState extends State<AddPagePit> {
         key: _formKey,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Image(
-                      height: 30,
-                      width: 30,
-                      image: AssetImage("assets/images/back.png"),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Back",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const TopBar(
-              topPadding: 0,
-            ),
+            ModTopBar(),
             Expanded(
               child: SingleChildScrollView(
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextForm(
-                        text: "Team name",
-                        formText: "Enter team name",
-                        padding: 0,
-                        controller: nameteamController,
-                      ),
                       NumberForm(
                         text: "Team number",
                         formText: "Enter team number",
-                        padding: 50,
+                        padding: 0,
                         controller: numteamController,
+                      ),
+                      TextForm(
+                        text: "Team name",
+                        formText: "Enter team name",
+                        padding: 50,
+                        controller: nameteamController,
                       ),
                       TextForm(
                         text: "Chassis type",
@@ -124,9 +90,12 @@ class _AddPagePitState extends State<AddPagePit> {
                         padding: 50,
                         controller: wheelController,
                       ),
-                      SizedBox(
-                        width: 150,
-                        height: 40,
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        width: 160,
+                        height: 45,
                         child: ElevatedButton(
                           onPressed: () {
                             _submitForm();
@@ -134,13 +103,15 @@ class _AddPagePitState extends State<AddPagePit> {
                           style: ElevatedButton.styleFrom(
                             onPrimary: Colors.white,
                             primary: Colors.indigo,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                           ),
                           child: const Text("Submit"),
                         ),
                       ),
                       const SizedBox(
                         height: 50,
-                      )
+                      ),
                     ],
                   ),
                 ),
