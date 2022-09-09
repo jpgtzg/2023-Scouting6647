@@ -18,7 +18,7 @@ const credentials = r'''
 
 const spreadsheetId = "10jLgLMa0GabdLGPh_Uj00OUHj8mjxuhcQemTuj9Y328";
 
-class NewMatchController {
+class MatchController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
