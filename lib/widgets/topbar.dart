@@ -9,7 +9,6 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -23,13 +22,16 @@ class TopBar extends StatelessWidget {
                   // color: Colors.black,
                 ),
                 child: const Center(
-                    child: Text(
-                  "VOLTEC 6647",
-                  style: TextStyle(
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xff2356A2),
-                    fontSize: 25,
+                    child: Flexible(
+                  child: Text(
+                    "VOLTEC 6647",
+                    overflow: TextOverflow.visible,
+                    style: TextStyle(
+                      fontFamily: "Manrope",
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xffFFFFFF),
+                      fontSize: 52,
+                    ),
                   ),
                 )),
               ),

@@ -11,7 +11,7 @@ class AppManager extends StatelessWidget {
       body: Stack(
         children: const [
           BottomBarInterface(),   
-          TopBar(topPadding: 40,),
+          TopBar(topPadding: 60,),
         ],
       ),
     );

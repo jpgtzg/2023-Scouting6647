@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/app_pages/add_page_match.dart';
 import 'package:scouting_app/app_pages/add_page_pit.dart';
+import 'package:scouting_app/robot_gallery/robot_list.dart';
+import 'package:scouting_app/system/list/list.dart';
+import 'package:scouting_app/widgets/bigbutton.dart';
 
 class AddPageManager extends StatefulWidget {
   const AddPageManager({Key? key}) : super(key: key);
@@ -18,110 +21,103 @@ class _AddPageManagerState extends State<AddPageManager> {
     precacheImage(image2, context);
     AssetImage image3 = AssetImage("assets/images/background/back2.jpeg");
     precacheImage(image3, context);
+    AssetImage image4 = AssetImage("assets/images/background/back1.jpeg");
     return Stack(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 125.0),
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                      const Color(0xff4DAAE8).withOpacity(0.3),
-                      BlendMode.srcOver),
-                  image: image1,
-                  fit: BoxFit.cover),
+        Container(
+          height: MediaQuery.of(context).size.height / 1.5,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: image1,
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.blueAccent.withOpacity(0.5),
+                BlendMode.srcOver,
+              ),
             ),
           ),
         ),
-
-        // Padding(
-        //   padding: const EdgeInsets.only(top: 125.0),
-        //   child: SingleChildScrollView(
-        //     physics: NeverScrollableScrollPhysics(),
-        //     child: Column(
-        //       children: [
-        //         Image(image: image3),
-        //         Image(image: image2),
-        //         Image(image: image1),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-
-        Padding(
-          padding: const EdgeInsets.only(top: 200),
-          child: Center(
+        /*  Padding(
+          padding: const EdgeInsets.only(top: 125.0),
+          child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Column(
               children: [
-                SizedBox(
-                  height: 10,
+                Image(image: image3),
+                Image(image: image2),
+                Image(image: image1),
+              ],
+            ),
+          ),
+        ), */
+        Padding(
+          padding: EdgeInsets.only( 
+            top: (MediaQuery.of(context).size.height / 3.2),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black87,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  spreadRadius: .8,
+                  blurRadius: 4,
+                  offset: Offset(1, 2),
                 ),
-                const Text(
-                  "Choose a scouting sheet",
-                  style: TextStyle(
-                    fontFamily: "Manrope",
-                    fontSize: 25,
-                    color: const Color(0xffFFFFFF),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(
-                  height: 75,
-                ),
-                Container(
-                  height: 60,
-                  width: 200,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const AddPageMatch()));
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xff2356A2),
+              ],
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
+              ),
+            ),
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20,left: 30, right: 30),
+                  child: Center(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            "Scouting",
+                            style: TextStyle(
+                              fontFamily: "Manrope",
+                              fontSize: 32,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          BigButton(
+                            title: "Match Scouting",
+                            image: image3,
+                            pressSelect: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const AddPageMatch()));
+                            },
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          BigButton(
+                            title: "Pit Scouting",
+                            image: image4,
+                            pressSelect: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const AddPagePit()));
+                            },
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                        ],
                       ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                      ),
-                    ),
-                    child: const Text(
-                      "Match scouting",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: "Manrope",
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
-                Container(
-                  height: 60,
-                  width: 200,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const AddPagePit()));
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xff2356A2),
-                      ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                      ),
-                    ),
-                    child: const Text(
-                      "Pit scouting",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: "Manrope",
-                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -133,3 +129,10 @@ class _AddPageManagerState extends State<AddPageManager> {
     );
   }
 }
+
+
+
+
+            /*
+            x
+        */

@@ -20,18 +20,15 @@ class _ListGalleryState extends State<ListGallery> {
     return Scaffold(
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 125.0),
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                    Colors.blue.withOpacity(0.3),
-                    BlendMode.srcOver,
-                  ),
-                  image: image3,
-                  fit: BoxFit.cover,
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                  Colors.blue.withOpacity(0.3),
+                  BlendMode.srcOver,
                 ),
+                image: image3,
+                fit: BoxFit.cover,
               ),
             ),
           ),
