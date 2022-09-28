@@ -67,13 +67,13 @@ class CustomBottomNavyBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: bgColor,
-        boxShadow: [
+       /*  boxShadow: [
           if (showElevation)
             const BoxShadow(
-              color: Colors.black12,
+              color: Colors.black38,
               blurRadius: 2,
             ),
-        ],
+        ], */
       ),
       child: SafeArea(
         child: Container(

@@ -38,7 +38,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
             ),
           ),
           bottomNavigationBar: CustomBottomNavyBar(
-            backgroundColor: Colors.black87,
+            backgroundColor: Color(0xff151515),
             selectedIndex: _currentIndex,
             onItemSelected: (index) {
               setState(() => _currentIndex = index);
@@ -51,7 +51,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
                 icon: const Icon(Icons.home),
-                activeColor: const Color(0xff2356A2),
+                activeColor: Colors.lightBlue,
               ),
               CustomBottomNavyBarItem(
                 title: const Text(
@@ -59,7 +59,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
                 icon: const Icon(Icons.apps),
-                activeColor: const Color(0xff2356A2),
+                activeColor: Colors.lightBlue,
               ),
               CustomBottomNavyBarItem(
                 title: const Text(
@@ -67,7 +67,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
                 icon: const Icon(Icons.settings),
-                activeColor: const Color(0xff2356A2),
+                activeColor: Colors.lightBlue,
               ),
             ],
           ),

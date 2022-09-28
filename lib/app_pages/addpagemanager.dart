@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/app_pages/add_page_match.dart';
 import 'package:scouting_app/app_pages/add_page_pit.dart';
-import 'package:scouting_app/robot_gallery/robot_list.dart';
-import 'package:scouting_app/system/list/list.dart';
 import 'package:scouting_app/widgets/bigbutton.dart';
+import 'package:scouting_app/widgets/overflowtobbar.dart';
 
 class AddPageManager extends StatefulWidget {
   const AddPageManager({Key? key}) : super(key: key);
@@ -13,15 +12,27 @@ class AddPageManager extends StatefulWidget {
 }
 
 class _AddPageManagerState extends State<AddPageManager> {
+  late AssetImage image1;
+  late AssetImage image3;
+  late AssetImage image4;
+  @override
+  void initState() {
+    super.initState();
+    image1 = AssetImage("assets/images/background/back3.jpeg");
+    image3 = AssetImage("assets/images/background/back2.jpeg");
+    image4 = AssetImage("assets/images/background/back1.jpeg");
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(image1, context);
+    precacheImage(image3, context);
+    precacheImage(image4, context);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
-    AssetImage image1 = AssetImage("assets/images/background/back3.jpeg");
-    precacheImage(image1, context);
-    AssetImage image2 = AssetImage("assets/images/background/back5.jpeg");
-    precacheImage(image2, context);
-    AssetImage image3 = AssetImage("assets/images/background/back2.jpeg");
-    precacheImage(image3, context);
-    AssetImage image4 = AssetImage("assets/images/background/back1.jpeg");
     return Stack(
       children: [
         Container(
@@ -31,32 +42,20 @@ class _AddPageManagerState extends State<AddPageManager> {
               image: image1,
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                Colors.blueAccent.withOpacity(0.5),
+                Colors.blueAccent.withOpacity(0.3),
                 BlendMode.srcOver,
               ),
             ),
           ),
         ),
-        /*  Padding(
-          padding: const EdgeInsets.only(top: 125.0),
-          child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: Column(
-              children: [
-                Image(image: image3),
-                Image(image: image2),
-                Image(image: image1),
-              ],
-            ),
-          ),
-        ), */
+        OverflowTopBar(topPadding: 60),
         Padding(
-          padding: EdgeInsets.only( 
+          padding: EdgeInsets.only(
             top: (MediaQuery.of(context).size.height / 3.2),
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.black87,
+              color: Color(0xff151515),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
@@ -73,7 +72,7 @@ class _AddPageManagerState extends State<AddPageManager> {
             child: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 20,left: 30, right: 30),
+                  padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
                   child: Center(
                     child: SingleChildScrollView(
                       child: Column(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TopBar extends StatelessWidget {
-  const TopBar({Key? key, required this.topPadding}) : super(key: key);
+class OverflowTopBar extends StatelessWidget {
+  const OverflowTopBar({Key? key, required this.topPadding}) : super(key: key);
 
   final double topPadding;
 
@@ -22,19 +22,22 @@ class TopBar extends StatelessWidget {
                   // color: Colors.black,
                 ),
                 child: const Center(
-                    child: Text(
-                  "VOLTEC 6647",
-                  style: TextStyle(
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xff2356A2),
-                    fontSize: 25,
+                    child: Flexible(
+                  child: Text(
+                    "VOLTEC 6647",
+                    overflow: TextOverflow.visible,
+                    style: TextStyle(
+                      fontFamily: "Manrope",
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xffFFFFFF),
+                      fontSize: 52,
+                    ),
                   ),
                 )),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 10, top: topPadding),
+              padding: EdgeInsets.only(right: 10, top: topPadding + 20),
               child: const Image(
                 alignment: Alignment.topLeft,
                 height: 80,
