@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/app_pages/add_page_match.dart';
-import 'package:scouting_app/app_pages/add_page_pit.dart';
+import 'package:scouting_app/screens/app_pages/add_page_match.dart';
+import 'package:scouting_app/screens/app_pages/add_page_pit.dart';
 import 'package:scouting_app/widgets/bigbutton.dart';
-import 'package:scouting_app/widgets/overflowtobbar.dart';
+
+import '../../widgets/topbar/overflowtobbar.dart';
 
 class AddPageManager extends StatefulWidget {
   const AddPageManager({Key? key}) : super(key: key);

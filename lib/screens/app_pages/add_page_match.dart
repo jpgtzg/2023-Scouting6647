@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/match.dart';
 import 'package:scouting_app/system/match/matchcontroller.dart';
-import 'package:scouting_app/widgets/mod_topbar.dart';
 
-import '../widgets/numberform.dart';
-import '../widgets/formdivider.dart';
-import '../widgets/textform.dart';
+import '../../widgets/forms/formdivider.dart';
+import '../../widgets/forms/numberform.dart';
+import '../../widgets/forms/textform.dart';
+import '../../widgets/topbar/mod_topbar.dart';
 
 class AddPageMatch extends StatefulWidget {
   const AddPageMatch({Key? key}) : super(key: key);

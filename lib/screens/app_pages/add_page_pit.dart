@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/pit/pitcontroller.dart';
 import 'package:scouting_app/system/pit/pit.dart';
-import 'package:scouting_app/widgets/mod_topbar.dart';
 
-import '../widgets/numberform.dart';
-import '../widgets/textform.dart';
+import '../../widgets/forms/numberform.dart';
+import '../../widgets/forms/textform.dart';
+import '../../widgets/topbar/mod_topbar.dart';
 
 class AddPagePit extends StatefulWidget {
   const AddPagePit({Key? key}) : super(key: key);

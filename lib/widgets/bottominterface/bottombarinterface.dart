@@ -1,8 +1,8 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:scouting_app/app_pages/addpagemanager.dart';
-import 'package:scouting_app/robot_gallery/robot_list.dart';
-import 'package:scouting_app/widgets/custombottomnavybar.dart';
+import 'package:scouting_app/screens/app_pages/addpagemanager.dart';
+import 'package:scouting_app/screens/robot_gallery/robot_list.dart';
+
+import 'custombottomnavybar.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
