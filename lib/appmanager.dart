@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/widgets/bottombarinterface.dart';
-import 'package:scouting_app/widgets/overflowtobbar.dart';
-import 'package:scouting_app/widgets/topbar.dart';
 
 class AppManager extends StatelessWidget {
   const AppManager({Key? key}) : super(key: key);
