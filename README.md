@@ -2,8 +2,8 @@
 Team #6647's official app for team and robot scouting during competitions
 
 ## To do (For now)
-* [ ] Update design for AddPageManager
-  + [ ] Add background images
+* [X] Update design for AddPageManager
+  + [X] Add background images
   + [X] AddPagePit
 * [X] Create add pages 
   + [X] AddPageMatch
@@ -12,11 +12,13 @@ Team #6647's official app for team and robot scouting during competitions
   + [X] AddPagePit
     + [X] Add functionality 
     + [X] Create design
-* [ ] Create layout for robot data page
-  + [ ] Add connectivity to database
+* [X] Create layout for robot data page
   + [ ] Add search bar
-  + [ ] Create RobotDetails() 
+  + [X] Create RobotDetails() 
 * [ ] Create settings tab
+
+* [ ] Set up database 
+* [ ] Create database connection
 
 ## Authors
 
