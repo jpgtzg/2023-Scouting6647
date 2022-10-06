@@ -2,26 +2,10 @@
 Team #6647's official app for team and robot scouting during competitions
 
 ## To do (For now)
-* [X] Update design for AddPageManager
-  + [X] Add background images
-  + [X] AddPagePit
-* [X] Create add pages 
-  + [X] AddPageMatch
-    + [X] Add functionality 
-    + [X] Create design
-  + [X] AddPagePit
-    + [X] Add functionality 
-    + [X] Create design
-* [X] Create layout for robot data page
-  + [ ] Add search bar
-  + [X] Create RobotDetails() 
 * [ ] Create settings tab
-
 * [ ] Set up database 
 * [ ] Create database connection
 
 ## Authors
 
 * **Juan Pablo Gutiérrez** - [AndromedaHelix](https://github.com/AndromedaHelix)
-* **Roberto Priego Bautista** - [rpribau](https://github.com/rpribau)
-
