@@ -55,6 +55,7 @@ flutter:
     - assets/images/background/back5.jpeg
     - assets/images/
     - assets/icons/
+    - assets/images/background/
 
   fonts: 
     - family: Manrope

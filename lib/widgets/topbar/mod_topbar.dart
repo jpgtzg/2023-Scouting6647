@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scouting_app/widgets/topbar/back.dart';
 
 import 'topbar.dart';
 
@@ -9,33 +10,7 @@ class ModTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 50.0, left: 10.0),
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Image(
-                  height: 30,
-                  width: 30,
-                  image: AssetImage("assets/images/back.png"),
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              const Text(
-                "Back",
-                style: TextStyle(
-                  fontFamily: "Manrope",
-                  fontSize: 18,
-                ),
-              ),
-            ],
-          ),
-        ),
+        const BackIcon(color: Colors.black,),
         const TopBar(
           topPadding: 0,
         )

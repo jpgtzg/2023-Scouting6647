@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/screens/app_pages/add_page_match.dart';
-import 'package:scouting_app/screens/app_pages/add_page_pit.dart';
+import 'package:scouting_app/screens/app_pages/match_page.dart';
+import 'package:scouting_app/screens/app_pages/notes_page.dart';
+import 'package:scouting_app/screens/app_pages/pit_page.dart';
 import 'package:scouting_app/widgets/bigbutton.dart';
 
 import '../../widgets/topbar/overflowtobbar.dart';
@@ -16,12 +17,14 @@ class _AddPageManagerState extends State<AddPageManager> {
   late AssetImage image1;
   late AssetImage image3;
   late AssetImage image4;
+  late AssetImage image5;
   @override
   void initState() {
     super.initState();
     image1 = AssetImage("assets/images/background/back3.jpeg");
     image3 = AssetImage("assets/images/background/back2.jpeg");
     image4 = AssetImage("assets/images/background/back1.jpeg");
+    image5 = AssetImage("assets/images/background/back6.jpeg");
   }
 
   @override
@@ -29,6 +32,7 @@ class _AddPageManagerState extends State<AddPageManager> {
     precacheImage(image1, context);
     precacheImage(image3, context);
     precacheImage(image4, context);
+    precacheImage(image5, context);
     super.didChangeDependencies();
   }
 
@@ -99,7 +103,7 @@ class _AddPageManagerState extends State<AddPageManager> {
                             image: image3,
                             pressSelect: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const AddPageMatch()));
+                                  builder: (context) => const MatchPage()));
                             },
                           ),
                           const SizedBox(
@@ -110,11 +114,19 @@ class _AddPageManagerState extends State<AddPageManager> {
                             image: image4,
                             pressSelect: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const AddPagePit()));
+                                  builder: (context) => const PitPage()));
                             },
                           ),
                           SizedBox(
                             height: 30,
+                          ),
+                          BigButton(
+                            title: "Extra notes",
+                            image: image5,
+                            pressSelect: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const NotesPage()));
+                            },
                           ),
                         ],
                       ),
@@ -129,10 +141,3 @@ class _AddPageManagerState extends State<AddPageManager> {
     );
   }
 }
-
-
-
-
-            /*
-            x
-        */
