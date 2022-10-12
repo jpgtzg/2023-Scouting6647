@@ -21,16 +21,7 @@ class _ListGalleryState extends State<ListGallery> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                colorFilter: ColorFilter.mode(
-                  Colors.blue.withOpacity(0.3),
-                  BlendMode.srcOver,
-                ),
-                image: image3,
-                fit: BoxFit.cover,
-              ),
-            ),
+              color: Color(0xff151515),
           ),
           Column(
             children: [
