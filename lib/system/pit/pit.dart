@@ -27,4 +27,12 @@ class Pit {
       'Wheel type': wheelType,
     };
   }
+
+  Map<String, dynamic> toList(){
+    return {
+      'Number' : number,
+      'Name' : name,
+      'Image' : "https://4.bp.blogspot.com/-3uyUTVhvMuo/WjAGEF31DhI/AAAAAAAAAEU/6EurwWD_ebc8o5bFfWoclQuhjSm1Aj5sQCK4BGAYYCw/s1600/FRC_Logo.svgS.jpg",
+    };
+  }
 }

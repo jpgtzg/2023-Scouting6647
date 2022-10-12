@@ -1,4 +1,5 @@
 import 'package:gsheets/gsheets.dart';
+import 'package:scouting_app/system/list/list.dart';
 import 'package:scouting_app/system/match/match.dart';
 
 const credentials = r'''
@@ -17,15 +18,22 @@ const credentials = r'''
 ''';
 
 const spreadsheetId = "10jLgLMa0GabdLGPh_Uj00OUHj8mjxuhcQemTuj9Y328";
+const robotlistSheetID = "1-ruP6V7oNfwpXa4AZL7OdtjHEfAYrLGcFQk7_sEi284";
 
 class MatchController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
+  
+  late Spreadsheet robotSpreadSheet;
+  late Worksheet robotListSheet;
 
   Future<void> init() async {
     spreadsheet = await gsheets.spreadsheet(spreadsheetId);
     sheet = (await spreadsheet.worksheetByTitle('match'))!;
+
+    robotSpreadSheet = await gsheets.spreadsheet(robotlistSheetID);
+    robotListSheet = (await robotSpreadSheet.worksheetByTitle('list')!);
   }
 
   Future<List<Match>?> getAll() async {
@@ -47,8 +55,8 @@ class MatchController {
     await init();
 
     //GETS ALL ROWS
-    final pit = (await sheet.values.map.allRows());
-    final allrows = pit!.map((json) => Match.fromGsheets(json)).toList();
+    final match = (await sheet.values.map.allRows());
+    final allrows = match!.map((json) => Match.fromGsheets(json)).toList();
 
     List<Match> rows = <Match>[];
 
@@ -64,5 +72,20 @@ class MatchController {
     await init();
     final list = match.toGsheets();
     await sheet.values.map.appendRow(list);
+
+    final convertedList = match.toList();
+    
+    //GET ALL ROWS
+    final robotList = (await robotListSheet.values.map.allRows());
+    final allrows = robotList!.map((json) => RobotList.fromGsheets(json)).toList();
+
+    String firstValue = convertedList.values.first;
+    for (var row in allrows) {
+      if(row.number == firstValue){
+        return null;
+      }
+    }
+
+    await robotListSheet.values.map.appendRow(convertedList);
   }
 }
