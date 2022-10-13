@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/match.dart';
 import 'package:scouting_app/system/match/matchcontroller.dart';
-import 'package:scouting_app/widgets/autodetails.dart';
-import 'package:scouting_app/widgets/endgamedetails.dart';
-import 'package:scouting_app/widgets/teleopdetails.dart';
+import 'package:scouting_app/widgets/details/autodetails.dart';
+import 'package:scouting_app/widgets/details/endgamedetails.dart';
+import 'package:scouting_app/widgets/details/teleopdetails.dart';
 
 /**
  * This code needs refactoring 
