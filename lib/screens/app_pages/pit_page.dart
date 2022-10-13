@@ -22,6 +22,8 @@ class _PitPageState extends State<PitPage> {
   TextEditingController numteamController = TextEditingController();
   TextEditingController chasisController = TextEditingController();
   TextEditingController wheelController = TextEditingController();
+  TextEditingController commentsController = TextEditingController();
+
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
@@ -30,6 +32,7 @@ class _PitPageState extends State<PitPage> {
         name: nameteamController.text,
         chassis: chasisController.text,
         wheelType: wheelController.text,
+        comments: commentsController.text,
       );
 
       PitController formPit = new PitController();
@@ -89,6 +92,12 @@ class _PitPageState extends State<PitPage> {
                         formText: "Enter wheel type",
                         padding: 50,
                         controller: wheelController,
+                      ),
+                      TextForm(
+                        text: "Comments",
+                        formText: "Enter short comments",
+                        padding: 50,
+                        controller: commentsController,
                       ),
                       const SizedBox(
                         height: 50,

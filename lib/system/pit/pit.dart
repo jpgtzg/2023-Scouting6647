@@ -3,12 +3,13 @@ class Pit {
   String? name;
   String? chassis;
   String? wheelType;
+  String? comments;
 
-  Pit({required this.number, required this.name, required this.chassis, required this.wheelType});
+  Pit({required this.number, required this.name, required this.chassis, required this.wheelType, required this.comments});
 
   @override
   String toString() =>
-      'Pit{number: $number, name: $name, chassis: $chassis, wheelType: $wheelType}';
+      'Pit{number: $number, name: $name, chassis: $chassis, wheelType: $wheelType, comments: $comments}';
   
   factory Pit.fromGsheets(dynamic json) {
     return Pit(
@@ -16,6 +17,7 @@ class Pit {
       name : json['Name'],
       chassis :  json['Chassis type'],
       wheelType:  json['Wheel type'],
+      comments: json['Comments'],
     );
   }
 
@@ -25,6 +27,7 @@ class Pit {
       'Name': name,
       'Chassis type': chassis,
       'Wheel type': wheelType,
+      'Comments' : comments,
     };
   }
 

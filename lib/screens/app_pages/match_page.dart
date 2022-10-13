@@ -211,7 +211,7 @@ class _MatchPageState extends State<MatchPage> {
                       const FormDivider(dividerText: "Comments:"),
                       TextForm(
                         text: "",
-                        formText: "Enter comments",
+                        formText: "Enter short comment",
                         padding: 0,
                         controller: commentController,
                       ),

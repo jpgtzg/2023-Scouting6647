@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/system/match/match.dart';
 import 'package:scouting_app/system/match/matchcontroller.dart';
+import 'package:scouting_app/widgets/autodetails.dart';
+import 'package:scouting_app/widgets/endgamedetails.dart';
+import 'package:scouting_app/widgets/teleopdetails.dart';
 
 /**
  * This code needs refactoring 
@@ -94,8 +97,8 @@ class _MatchDetailsState extends State<MatchDetails> {
                               itemCount: match.length,
                               itemBuilder: (context, index) => Container(
                                 padding: EdgeInsets.only(
-                                  left: 20,
-                                  right: 20,
+                                  left: 15,
+                                  right: 15,
                                 ),
                                 child: Column(
                                   children: [
@@ -105,15 +108,12 @@ class _MatchDetailsState extends State<MatchDetails> {
                                         right: 10,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: Color(0xff757575),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(35.0)),
                                       ),
                                       child: Column(
                                         children: [
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
                                           Text(
                                             (match[index].alliance ?? '')
                                                     .toUpperCase() +
@@ -150,250 +150,56 @@ class _MatchDetailsState extends State<MatchDetails> {
                                               ),
                                             ],
                                           ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 30.0, right: 30),
-                                            child: const SizedBox(
-                                              // width: 320,
-                                              child: Divider(
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Text(
-                                            "Autonomous information: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
                                           SizedBox(
                                             height: 10,
                                           ),
-                                          Text(
-                                            "Robot left tarmac: " +
+                                          AutoDetails(
+                                            title: "Autonomous",
+                                            tarmacautoanswer:
                                                 (match[index].tarmacauto ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
+                                            lowerautoanswer:
+                                                (match[index].lowerauto ?? ''),
+                                            uppwerautoanswer:
+                                                (match[index].upperauto ?? ''),
                                           ),
                                           SizedBox(
                                             height: 10,
                                           ),
-                                          Wrap(
-                                            children: [
-                                              Text(
-                                                "Lower score: " +
-                                                    (match[index].lowerauto ??
-                                                        ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                              Text(
-                                                " Upper score: " +
-                                                    (match[index].upperauto ??
-                                                        ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Teleop: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Text(
-                                                "Lower score: " +
-                                                    (match[index].lowerteleop ??
-                                                        ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                              Text(
-                                                " Upper score: " +
-                                                    (match[index].upperteleop ??
-                                                        ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Robot defended other robots: " +
+                                          TeleopDetails(
+                                            title: "Teleop",
+                                            defendedanswer:
                                                 (match[index].defended ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Robot got defended?: " +
+                                            godefendedanswer:
                                                 (match[index].gotdefended ??
                                                     ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
+                                            lowerteleopanswer:
+                                                (match[index].lowerteleop ??
+                                                    ''),
+                                            upperteleopanswer:
+                                                (match[index].upperteleop ??
+                                                    ''),
                                           ),
-                                          Text(
-                                            "Endgame: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
+                                          SizedBox(
+                                            height: 10,
                                           ),
-                                          Text(
-                                            "Rung climbed: " +
+                                          EndgameDetails(
+                                            title: "Endgame & Extra",
+                                            runganswer:
                                                 (match[index].rung ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Fouls: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Wrap(
-                                            children: [
-                                              Text(
-                                                "Fouls: " +
-                                                    (match[index].fouls ?? ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                              Text(
-                                                "Tech fouls: " +
-                                                    (match[index].techfouls ??
-                                                        ''),
-                                                style: TextStyle(
-                                                  fontFamily: "Manrope",
-                                                  fontSize: 18,
-                                                ),
-                                                overflow: TextOverflow.visible,
-                                              ),
-                                            ],
-                                          ),
-                                          Text(
-                                            "Results: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Score: " +
+                                            fouslanswer:
+                                                (match[index].fouls ?? ''),
+                                            techfoulsanswer:
+                                                (match[index].techfouls ?? ''),
+                                            scoreanswer:
                                                 (match[index].alliancescore ??
                                                     ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Ranking points: " +
-                                                (match[index].rp ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Won?: " + (match[index].won ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Extra: ",
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
-                                            ),
-                                            overflow: TextOverflow.visible,
-                                          ),
-                                          Text(
-                                            "Comments: " +
+                                            rpanswer: (match[index].rp ?? ''),
+                                            wonAnswer: (match[index].won ?? ''),
+                                            commentsAnswer:
                                                 (match[index].comments ?? ''),
-                                            style: TextStyle(
-                                              fontFamily: "Manrope",
-                                              fontSize: 18,
-                                            ),
-                                            overflow: TextOverflow.visible,
                                           ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 30.0, right: 30),
-                                            child: const SizedBox(
-                                              // width: 320,
-                                              child: Divider(
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            height: 20,
+                                          SizedBox(
+                                            height: 10,
                                           ),
                                         ],
                                       ),

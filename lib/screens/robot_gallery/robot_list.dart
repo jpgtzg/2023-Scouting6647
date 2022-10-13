@@ -21,16 +21,32 @@ class _ListGalleryState extends State<ListGallery> {
       body: Stack(
         children: [
           Container(
-              color: Color(0xff151515),
+            color: Color(0xff151515),
           ),
           Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 55.0, left: 40, right: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      "Robot List",
+                      overflow: TextOverflow.visible,
+                      style: TextStyle(
+                        fontFamily: "Manrope",
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xffFFFFFF),
+                        fontSize: 42,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    left: 10.0,
+                    left: 10,
                     right: 10,
-                    top: 100,
                   ),
                   child: FutureBuilder<List<RobotList>>(
                     future: widget.listController.getAll(),
@@ -112,7 +128,7 @@ class RobotCard extends StatelessWidget {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
-                    color: Colors.deepPurpleAccent.withOpacity(0.8),
+                    color: Colors.lightBlue.withOpacity(0.8),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0, top: 10),

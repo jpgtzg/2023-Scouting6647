@@ -17,10 +17,6 @@ class OverflowTopBar extends StatelessWidget {
               child: Container(
                 height: 65,
                 width: 195,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(17),
-                  // color: Colors.black,
-                ),
                 child: const Center(
                     child: Flexible(
                   child: Text(

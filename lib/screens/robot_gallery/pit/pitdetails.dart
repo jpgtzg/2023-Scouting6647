@@ -6,7 +6,9 @@ class PitDetails extends StatefulWidget {
   late PitController pitController = new PitController();
   String teamNum;
 
-  PitDetails(this.teamNum,);
+  PitDetails(
+    this.teamNum,
+  );
 
   @override
   State<PitDetails> createState() => _PitDetailsState();
@@ -32,7 +34,6 @@ class _PitDetailsState extends State<PitDetails> {
             if (pit.length != 0) {
               return Column(
                 children: [
-                  
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
@@ -85,67 +86,199 @@ class _PitDetailsState extends State<PitDetails> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
                           Expanded(
                             child: ListView.builder(
                               itemCount: pit.length,
                               itemBuilder: (context, index) => Container(
                                 padding: EdgeInsets.only(
-                                  left: 20,
-                                  right: 20,
+                                  left: 15,
+                                  right: 15,
                                 ),
                                 child: Column(
                                   children: [
                                     Container(
+                                      padding: EdgeInsets.only(
+                                        top: 15,
+                                        bottom: 25,
+                                        left: 15,
+                                      ),
+                                      height: 230,
+                                      width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(35.0)),
+                                        // color: Color(0xff1E91D6),
+                                        borderRadius: BorderRadius.circular(25),
                                       ),
-                                      child: Column(
+                                      child: Stack(
                                         children: [
-                                          SizedBox(
-                                            height: 10,
+                                          Positioned(
+                                            left: 2,
+                                            child: Text(
+                                              "Response " +
+                                                  (index + 1).toString(),
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 25,
+                                              ),
+                                            ),
                                           ),
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 10.0, left: 30),
-                                              child: Text(
-                                                "Response #" +
-                                                    ((index + 1).toString()),
-                                                style: const TextStyle(
-                                                  fontFamily: "Space Grotesk",
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black87,
-                                                  fontSize: 20,
+                                          Positioned(
+                                            left: 0,
+                                            top: 40,
+                                            child: Container(
+                                              padding: EdgeInsets.only(
+                                                top: 2,
+                                                bottom: 2,
+                                                left: 8,
+                                                right: 8,
+                                              ),
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                color: Colors.lightBlue,
+                                              ),
+                                              child: Center(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      "Chassis:",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text(
+                                                      (pit[index].chassis ??
+                                                          ''),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
                                           ),
-                                          Text(
-                                            "Chassis: " +
-                                                (pit[index].chassis ?? ''),
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black87,
-                                              fontFamily: "Manrope",
+                                          Positioned(
+                                            left: 0,
+                                            top: 90,
+                                            child: Container(
+                                              padding: EdgeInsets.only(
+                                                top: 2,
+                                                bottom: 2,
+                                                left: 8,
+                                                right: 8,
+                                              ),
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                color: Colors.lightBlue,
+                                              ),
+                                              child: Center(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      "Wheel type:",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text(
+                                                      (pit[index].wheelType ??
+                                                          ''),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                          Text(
-                                            "Wheel Type: " +
-                                                (pit[index].wheelType ?? ''),
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black87,
-                                              fontFamily: "Manrope",
+                                          Positioned(
+                                            left: 0,
+                                            top: 140,
+                                            child: Container(
+                                              padding: EdgeInsets.only(
+                                                top: 2,
+                                                bottom: 2,
+                                                left: 8,
+                                                right: 8,
+                                              ),
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                                color: Colors.lightBlue,
+                                              ),
+                                              child: Center(
+                                                child: Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text(
+                                                      "Comments:",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text(
+                                                      (pit[index].comments ??
+                                                          ''),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 40,
                                           ),
                                         ],
                                       ),

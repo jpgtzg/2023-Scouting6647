@@ -29,9 +29,9 @@ class _NotesDetailsState extends State<NotesDetails> {
               );
             }
 
-            final pit = snapshot.data!;
+            final notes = snapshot.data!;
 
-            if (pit.length != 0) {
+            if (notes.length != 0) {
               return Column(
                 children: [
                   Expanded(
@@ -52,7 +52,7 @@ class _NotesDetailsState extends State<NotesDetails> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Text(
-                                  "Team " + (pit[0].number ?? ''),
+                                  "Team " + (notes[0].number ?? ''),
                                   style: const TextStyle(
                                     fontFamily: "Roboto Mono",
                                     fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class _NotesDetailsState extends State<NotesDetails> {
                                   ),
                                 ),
                                 Text(
-                                  (pit[0].name ?? ''),
+                                  (notes[0].name ?? ''),
                                   style: const TextStyle(
                                     fontFamily: "Roboto Mono",
                                     fontWeight: FontWeight.bold,
@@ -86,12 +86,9 @@ class _NotesDetailsState extends State<NotesDetails> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
                           Expanded(
                             child: ListView.builder(
-                              itemCount: pit.length,
+                              itemCount: notes.length,
                               itemBuilder: (context, index) => Container(
                                 padding: EdgeInsets.only(
                                   left: 20,
@@ -100,45 +97,43 @@ class _NotesDetailsState extends State<NotesDetails> {
                                 child: Column(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.only(left: 10, right: 10),
+                                      padding: EdgeInsets.only(
+                                        top: 15,
+                                        bottom: 25,
+                                        left: 15,
+                                      ),
+                                      height: 180,
+                                      width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(35.0)),
+                                        // color: Color(0xff1E91D6),
+                                        borderRadius: BorderRadius.circular(25),
                                       ),
-                                      child: Column(
+                                      child: Stack(
                                         children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 10.0, left: 30),
-                                              child: Text(
-                                                "Response #" +
-                                                    ((index + 1).toString()),
-                                                style: const TextStyle(
-                                                  fontFamily: "Space Grotesk",
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black87,
-                                                  fontSize: 20,
-                                                ),
+                                          Positioned(
+                                            left: 2,
+                                            child: Text(
+                                              "Notes " + (index + 1).toString(),
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 25,
                                               ),
                                             ),
                                           ),
-                                          Text(
-                                            "Notes: " +
-                                                (pit[index].notes ?? ''),
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black87,
-                                              fontFamily: "Manrope",
+                                          Positioned(
+                                            left: 2,
+                                            top: 40,
+                                            child: Text(
+                                              (notes[index].notes ?? ''),
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.black,
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 40,
                                           ),
                                         ],
                                       ),
