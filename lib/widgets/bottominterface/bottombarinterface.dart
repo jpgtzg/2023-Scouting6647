@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scouting_app/screens/app_pages/addpagemanager.dart';
 import 'package:scouting_app/screens/robot_gallery/robot_list.dart';
+import 'package:scouting_app/screens/settings/settings_screen.dart';
 
 import 'custombottomnavybar.dart';
 
@@ -31,9 +32,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               children: <Widget>[
                 const AddPageManager(),
                 ListGallery(),
-                Container(
-                  color: Colors.green,
-                ),
+                SettingScreen(),
               ],
             ),
           ),
