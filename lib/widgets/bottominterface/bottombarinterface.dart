@@ -6,14 +6,13 @@ import 'package:scouting_app/screens/settings/settings_screen.dart';
 import 'custombottomnavybar.dart';
 
 class BottomBarInterface extends StatefulWidget {
-  const BottomBarInterface({Key? key}) : super(key: key);
+  const BottomBarInterface();
 
   @override
   State<BottomBarInterface> createState() => _BottomBarInterfaceState();
 }
 
 class _BottomBarInterfaceState extends State<BottomBarInterface> {
-//
   int _currentIndex = 0;
   late final PageController _pageController = PageController();
 
@@ -30,7 +29,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                 setState(() => _currentIndex = index);
               },
               children: <Widget>[
-                const AddPageManager(),
+                AddPageManager(),
                 ListGallery(),
                 SettingScreen(),
               ],

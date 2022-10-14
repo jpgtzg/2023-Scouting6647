@@ -7,7 +7,11 @@ import 'package:scouting_app/widgets/bigbutton.dart';
 import '../../widgets/topbar/overflowtobbar.dart';
 
 class AddPageManager extends StatefulWidget {
-  const AddPageManager({Key? key}) : super(key: key);
+  // late AssetImage image1;
+  // late AssetImage image3;
+  // late AssetImage image4;
+  // late AssetImage image5;
+  AddPageManager();
 
   @override
   State<AddPageManager> createState() => _AddPageManagerState();

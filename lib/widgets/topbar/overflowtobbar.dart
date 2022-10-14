@@ -18,18 +18,16 @@ class OverflowTopBar extends StatelessWidget {
                 height: 65,
                 width: 195,
                 child: const Center(
-                    child: Flexible(
-                  child: Text(
-                    "VOLTEC 6647",
-                    overflow: TextOverflow.visible,
-                    style: TextStyle(
-                      fontFamily: "Manrope",
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xffFFFFFF),
-                      fontSize: 52,
-                    ),
-                  ),
-                )),
+                    child: Text(
+                      "VOLTEC 6647",
+                      overflow: TextOverflow.visible,
+                      style: TextStyle(
+                        fontFamily: "Manrope",
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xffFFFFFF),
+                        fontSize: 52,
+                      ),
+                    )),
               ),
             ),
             Padding(
