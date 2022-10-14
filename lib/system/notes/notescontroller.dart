@@ -82,6 +82,7 @@ class NotesController {
         robotList!.map((json) => RobotList.fromGsheets(json)).toList();
 
     String firstValue = convertedList.values.first;
+    print(firstValue);
     for (var row in allrows) {
       if (row.number == firstValue) {
         return null;

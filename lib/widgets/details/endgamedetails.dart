@@ -118,7 +118,7 @@ class EndgameDetails extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "Fouls",
+                      "Fouls:",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,

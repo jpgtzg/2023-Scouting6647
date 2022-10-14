@@ -28,7 +28,7 @@ class ListController {
     sheet = (await spreadsheet.worksheetByTitle('list'))!;
   }
 
-  Future<List<RobotList>> getAll() async {
+  Future<List<RobotList>?> getAll() async {
     await init();
     final robotList = (await sheet.values.map.allRows())?.toList();
     return robotList!.map((json) => RobotList.fromGsheets(json)).toList();

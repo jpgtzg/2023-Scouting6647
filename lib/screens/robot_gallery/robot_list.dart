@@ -48,7 +48,7 @@ class _ListGalleryState extends State<ListGallery> {
                     left: 10,
                     right: 10,
                   ),
-                  child: FutureBuilder<List<RobotList>>(
+                  child: FutureBuilder<List<RobotList>?>(
                     future: widget.listController.getAll(),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
