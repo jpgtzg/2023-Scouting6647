@@ -1,5 +1,5 @@
-name: scouting_app
-description: A new Flutter project.
+name: scouting6647
+description: Team 6647's scouting app
 
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -56,6 +56,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/images/background/
+
 
   fonts: 
     - family: Manrope
