@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/match/match.dart';
-import 'package:scouting_app/system/match/matchcontroller.dart';
-import 'package:scouting_app/widgets/details/autodetails.dart';
-import 'package:scouting_app/widgets/details/endgamedetails.dart';
-import 'package:scouting_app/widgets/details/teleopdetails.dart';
+import 'package:scouting6647/system/match/match.dart';
+import 'package:scouting6647/system/match/matchcontroller.dart';
+import 'package:scouting6647/widgets/details/autodetails.dart';
+import 'package:scouting6647/widgets/details/endgamedetails.dart';
+import 'package:scouting6647/widgets/details/teleopdetails.dart';
 
 /**
  * This code needs refactoring 
  */
 
 class MatchDetails extends StatefulWidget {
-  late MatchController matchController = new MatchController();
-  String teamNum;
+  final MatchController matchController = new MatchController();
+  final String teamNum;
 
   MatchDetails(this.teamNum);
 
@@ -186,7 +186,7 @@ class _MatchDetailsState extends State<MatchDetails> {
                                             title: "Endgame & Extra",
                                             runganswer:
                                                 (match[index].rung ?? ''),
-                                            fouslanswer:
+                                            foulsanswer:
                                                 (match[index].fouls ?? ''),
                                             techfoulsanswer:
                                                 (match[index].techfouls ?? ''),

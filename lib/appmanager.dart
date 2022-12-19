@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/widgets/bottominterface/bottombarinterface.dart';
+import 'package:scouting6647/widgets/bottominterface/bottombarinterface.dart';
 
 class AppManager extends StatelessWidget {
   const AppManager({Key? key}) : super(key: key);

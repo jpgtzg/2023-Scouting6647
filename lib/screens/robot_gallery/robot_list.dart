@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/list/list.dart';
-import 'package:scouting_app/system/list/listcontroller.dart';
-import 'package:scouting_app/screens/robot_gallery/robot_details.dart';
+import 'package:scouting6647/system/list/list.dart';
+import 'package:scouting6647/system/list/listcontroller.dart';
+import 'package:scouting6647/screens/robot_gallery/robot_details.dart';
 
 class ListGallery extends StatefulWidget {
-  late ListController listController = new ListController();
+  final ListController listController = new ListController();
 
   ListGallery({Key? key}) : super(key: key);
 

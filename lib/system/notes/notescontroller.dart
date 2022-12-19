@@ -1,5 +1,5 @@
 import 'package:gsheets/gsheets.dart';
-import 'package:scouting_app/system/notes/notes.dart';
+import 'package:scouting6647/system/notes/notes.dart';
 
 import '../list/list.dart';
 

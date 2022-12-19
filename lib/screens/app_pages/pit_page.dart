@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/pit/pitcontroller.dart';
-import 'package:scouting_app/system/pit/pit.dart';
+import 'package:scouting6647/system/pit/pitcontroller.dart';
+import 'package:scouting6647/system/pit/pit.dart';
 
 import '../../widgets/forms/numberform.dart';
 import '../../widgets/forms/textform.dart';
@@ -44,9 +44,7 @@ class _PitPageState extends State<PitPage> {
   }
 
   _showSnackBar(String message) {
-    final snackbar = SnackBar(
-      content: Text(message),
-    );
+    
 
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text("Data sent")));
@@ -109,9 +107,7 @@ class _PitPageState extends State<PitPage> {
                           onPressed: () {
                             _submitForm();
                           },
-                          style: ElevatedButton.styleFrom(
-                            onPrimary: Colors.white,
-                            primary: Colors.indigo,
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo, foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20)),
                           ),

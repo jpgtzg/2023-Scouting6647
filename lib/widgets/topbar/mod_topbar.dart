@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/widgets/topbar/back.dart';
+import 'package:scouting6647/widgets/topbar/back.dart';
 
 import 'topbar.dart';
 

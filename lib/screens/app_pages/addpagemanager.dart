@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/screens/app_pages/match_page.dart';
-import 'package:scouting_app/screens/app_pages/notes_page.dart';
-import 'package:scouting_app/screens/app_pages/pit_page.dart';
-import 'package:scouting_app/widgets/bigbutton.dart';
+import 'package:scouting6647/screens/app_pages/match_page.dart';
+import 'package:scouting6647/screens/app_pages/notes_page.dart';
+import 'package:scouting6647/screens/app_pages/pit_page.dart';
+import 'package:scouting6647/widgets/bigbutton.dart';
 
 import '../../widgets/topbar/overflowtobbar.dart';
 

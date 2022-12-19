@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/notes/notes.dart';
-import 'package:scouting_app/system/notes/notescontroller.dart';
-import 'package:scouting_app/widgets/forms/bigtextform.dart';
+import 'package:scouting6647/system/notes/notes.dart';
+import 'package:scouting6647/system/notes/notescontroller.dart';
+import 'package:scouting6647/widgets/forms/bigtextform.dart';
 
 import '../../widgets/forms/numberform.dart';
 import '../../widgets/forms/textform.dart';
@@ -39,9 +39,7 @@ class _NotesPageState extends State<NotesPage> {
   }
 
   _showSnackBar(String message) {
-    final snackbar = SnackBar(
-      content: Text(message),
-    );
+    
 
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text("Data sent")));
@@ -92,9 +90,7 @@ class _NotesPageState extends State<NotesPage> {
                           onPressed: () {
                             _submitForm();
                           },
-                          style: ElevatedButton.styleFrom(
-                            onPrimary: Colors.white,
-                            primary: Colors.indigo,
+                          style: ElevatedButton.styleFrom(foregroundColor: Colors.white, backgroundColor: Colors.indigo,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20)),
                           ),

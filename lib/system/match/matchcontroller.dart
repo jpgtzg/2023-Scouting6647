@@ -1,6 +1,6 @@
 import 'package:gsheets/gsheets.dart';
-import 'package:scouting_app/system/list/list.dart';
-import 'package:scouting_app/system/match/match.dart';
+import 'package:scouting6647/system/list/list.dart';
+import 'package:scouting6647/system/match/match.dart';
 
 const credentials = r'''
 {

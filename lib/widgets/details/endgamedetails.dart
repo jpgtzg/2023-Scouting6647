@@ -4,7 +4,7 @@ class EndgameDetails extends StatelessWidget {
   final String title;
   final String runganswer;
 
-  final String fouslanswer;
+  final String foulsanswer;
 
   final String techfoulsanswer;
 
@@ -19,7 +19,7 @@ class EndgameDetails extends StatelessWidget {
   const EndgameDetails({
     required this.title,
     required this.runganswer,
-    required this.fouslanswer,
+    required this.foulsanswer,
     required this.techfoulsanswer,
     required this.scoreanswer,
     required this.rpanswer,
@@ -130,7 +130,7 @@ class EndgameDetails extends StatelessWidget {
                       width: 5,
                     ),
                     Text(
-                      fouslanswer,
+                      foulsanswer,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,

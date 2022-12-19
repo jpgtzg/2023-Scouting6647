@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/screens/robot_gallery/match/matchdetails.dart';
-import 'package:scouting_app/screens/robot_gallery/notes/notesdetails.dart';
-import 'package:scouting_app/screens/robot_gallery/pit/pitdetails.dart';
-import 'package:scouting_app/widgets/topbar/back.dart';
+import 'package:scouting6647/screens/robot_gallery/match/matchdetails.dart';
+import 'package:scouting6647/screens/robot_gallery/notes/notesdetails.dart';
+import 'package:scouting6647/screens/robot_gallery/pit/pitdetails.dart';
+import 'package:scouting6647/widgets/topbar/back.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-
-import '../../widgets/topbar/mod_topbar.dart';
 
 // ignore: must_be_immutable
 class RobotDetails extends StatelessWidget {

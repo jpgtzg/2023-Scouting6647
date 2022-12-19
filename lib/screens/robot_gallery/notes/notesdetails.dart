@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/notes/notes.dart';
-import 'package:scouting_app/system/notes/notescontroller.dart';
+import 'package:scouting6647/system/notes/notes.dart';
+import 'package:scouting6647/system/notes/notescontroller.dart';
 
 class NotesDetails extends StatefulWidget {
-  late NotesController notesController = new NotesController();
-  String teamNum;
+  final NotesController notesController = new NotesController();
+  final String teamNum;
 
   NotesDetails(
     this.teamNum,

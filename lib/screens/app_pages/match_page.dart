@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scouting_app/system/match/match.dart';
-import 'package:scouting_app/system/match/matchcontroller.dart';
+import 'package:scouting6647/system/match/match.dart';
+import 'package:scouting6647/system/match/matchcontroller.dart';
 
 import '../../widgets/forms/formdivider.dart';
 import '../../widgets/forms/numberform.dart';
@@ -71,9 +71,7 @@ class _MatchPageState extends State<MatchPage> {
   }
 
   _showSnackBar(String message) {
-    final snackbar = SnackBar(
-      content: Text(message),
-    );
+    
 
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text("Data sent")));
@@ -225,9 +223,7 @@ class _MatchPageState extends State<MatchPage> {
                           onPressed: () {
                             _submitForm();
                           },
-                          style: ElevatedButton.styleFrom(
-                            onPrimary: Colors.white,
-                            primary: Colors.indigo,
+                          style: ElevatedButton.styleFrom(foregroundColor: Colors.white, backgroundColor: Colors.indigo,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20)),
                           ),
