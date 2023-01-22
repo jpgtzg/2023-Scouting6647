@@ -21,71 +21,73 @@ class RobotDetails extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Expanded(
-            child: SlidingUpPanel(
-              minHeight: (size.height / 2),
-              maxHeight: (size.height / 1.2),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(32),
-                topRight: Radius.circular(32),
-              ),
-              color: Color(0xff151515),
-              parallaxEnabled: true,
-              body: Align(
-                alignment: Alignment.topCenter,
-                child: Image(
-                  height: size.height / 1.8,
-                  width: size.width,
-                  fit: BoxFit.cover,
-                  image: NetworkImage(image),
+          Column(children: [
+            Expanded(
+              child: SlidingUpPanel(
+                minHeight: (size.height / 2),
+                maxHeight: (size.height / 1.2),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(32),
+                  topRight: Radius.circular(32),
                 ),
-              ),
-              panel: Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20),
-                child: DefaultTabController(
-                  length: 3,
-                  initialIndex: 0,
-                  child: Column(
-                    children: [
-                      TabBar(
-                        labelColor: Colors.white,
-                        unselectedLabelColor: Colors.white.withOpacity(0.3),
-                        labelStyle: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                        labelPadding: EdgeInsets.symmetric(
-                          horizontal: 32,
-                        ),
-                        tabs: [
-                          Tab(
-                            text: "Match".toUpperCase(),
+                color: Color(0xff151515),
+                parallaxEnabled: true,
+                body: Align(
+                  alignment: Alignment.topCenter,
+                  child: Image(
+                    height: size.height / 1.8,
+                    width: size.width,
+                    fit: BoxFit.cover,
+                    image: NetworkImage(image),
+                  ),
+                ),
+                panel: Padding(
+                  padding: const EdgeInsets.only(left: 20.0, right: 20),
+                  child: DefaultTabController(
+                    length: 3,
+                    initialIndex: 0,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          labelColor: Colors.white,
+                          unselectedLabelColor: Colors.white.withOpacity(0.3),
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.w600,
                           ),
-                          Tab(
-                            text: "Pit".toUpperCase(),
+                          labelPadding: EdgeInsets.symmetric(
+                            horizontal: 32,
                           ),
-                          Tab(
-                            text: "Notes".toUpperCase(),
-                          ),
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black.withOpacity(0.3),
-                      ),
-                      Expanded(
-                        child: TabBarView(
-                          children: [
-                            MatchDetails(teamNumber),
-                            PitDetails(teamNumber),
-                            NotesDetails(teamNumber),
+                          tabs: [
+                            Tab(
+                              text: "Match".toUpperCase(),
+                            ),
+                            Tab(
+                              text: "Pit".toUpperCase(),
+                            ),
+                            Tab(
+                              text: "Notes".toUpperCase(),
+                            ),
                           ],
                         ),
-                      )
-                    ],
+                        Divider(
+                          color: Colors.black.withOpacity(0.3),
+                        ),
+                        Expanded(
+                          child: TabBarView(
+                            children: [
+                              MatchDetails(teamNumber),
+                              PitDetails(teamNumber),
+                              NotesDetails(teamNumber),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+          ]),
           BackIcon(color: Colors.black)
         ],
       ),
