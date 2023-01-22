@@ -17,23 +17,20 @@ const credentials = r'''
 }
 ''';
 
-const spreadsheetId = "10jLgLMa0GabdLGPh_Uj00OUHj8mjxuhcQemTuj9Y328";
-const robotlistSheetID = "1-ruP6V7oNfwpXa4AZL7OdtjHEfAYrLGcFQk7_sEi284";
+const spreadsheetId = "1eBSDzebV-YHiSuAUo9TqtijLuKGsB7ZcwWyYhrDzOUI";
 
 class MatchController {
   final GSheets gsheets = GSheets(credentials);
   late Spreadsheet spreadsheet;
   late Worksheet sheet;
   
-  late Spreadsheet robotSpreadSheet;
   late Worksheet robotListSheet;
 
   Future<void> init() async {
     spreadsheet = await gsheets.spreadsheet(spreadsheetId);
     sheet = (await spreadsheet.worksheetByTitle('match'))!;
 
-    robotSpreadSheet = await gsheets.spreadsheet(robotlistSheetID);
-    robotListSheet = (await robotSpreadSheet.worksheetByTitle('list')!);
+    robotListSheet = (await spreadsheet.worksheetByTitle('list')!);
   }
 
   Future<List<Match>?> getAll() async {
